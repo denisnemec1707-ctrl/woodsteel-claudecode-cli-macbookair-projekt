@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
+/* ===== WOODSTEEL BRAND THEME (Claude Code build) ===== */
 :root {
+  --color-brand-brown: #3f2211;
+  --color-brand-gold: #cbab58;
+  --color-brand-gold-hover: #b8973f;
+  --color-brand-cream: #ece4e0;
+  --color-brand-wood: #764d24;
+  --color-brand-charcoal: #2b1810;
+  --color-brand-muted: #8a7060;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--color-brand-charcoal);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-brown: var(--color-brand-brown);
+  --color-gold: var(--color-brand-gold);
+  --color-gold-hover: var(--color-brand-gold-hover);
+  --color-cream: var(--color-brand-cream);
+  --color-wood: var(--color-brand-wood);
+  --color-charcoal: var(--color-brand-charcoal);
+  --color-mutedbrand: var(--color-brand-muted);
+
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    color: var(--color-brand-brown);
+  }
+  ::selection { background: var(--color-brand-gold); color: var(--color-brand-brown); }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-display-1 { font-size: clamp(2.5rem, 5.5vw, 4.75rem); line-height: 1.02; letter-spacing: -0.03em; }
+  .text-display-2 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.08; letter-spacing: -0.025em; }
+  .text-display-3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); line-height: 1.15; letter-spacing: -0.02em; }
+  .text-eyebrow { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+
+  .reveal { animation: ws-reveal 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes ws-reveal {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .stagger > * { animation: ws-reveal 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .stagger > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger > *:nth-child(2) { animation-delay: 80ms; }
+  .stagger > *:nth-child(3) { animation-delay: 160ms; }
+  .stagger > *:nth-child(4) { animation-delay: 240ms; }
+  .stagger > *:nth-child(5) { animation-delay: 320ms; }
+  .stagger > *:nth-child(6) { animation-delay: 400ms; }
 }
