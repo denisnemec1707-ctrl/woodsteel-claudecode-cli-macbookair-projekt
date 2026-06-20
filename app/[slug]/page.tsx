@@ -1,19 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { ArrowLeft, Calendar, ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FinalCTA } from "@/components/FinalCTA";
+import { ArticleBody } from "@/components/ArticleBody";
 import { blogPosts, getBlogPost, formatDate } from "@/lib/blog";
+import { prodMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
+  if (!post) return {};
+  const seo = prodMeta(`/${slug}/`);
+  return {
+    title: seo?.title || `${post.title} - WoodSteel.sk`,
+    description: seo?.meta_description || post.excerpt,
+    alternates: { canonical: `https://woodsteel.sk/${slug}/` },
+    openGraph: {
+      title: seo?.title || post.title,
+      description: seo?.meta_description || post.excerpt,
+      type: "article",
+      images: seo?.og_image ? [seo.og_image] : [post.image],
+    },
+  };
+}
+
+export default async function ArticleAtRoot({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) notFound();
@@ -26,7 +55,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <>
       <Header />
       <main className="flex-1">
-        {/* Hero */}
         <section className="relative min-h-[55svh] flex items-end overflow-hidden">
           <Image
             src={post.image}
@@ -45,9 +73,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <ArrowLeft size={14} /> Všetky články
             </Link>
             <div className="text-eyebrow text-cream/80 mb-3">{post.category}</div>
-            <h1 className="text-display-2 font-extrabold text-white">
-              {post.title}
-            </h1>
+            <h1 className="text-display-2 font-extrabold text-white">{post.title}</h1>
             <div className="mt-5 inline-flex items-center gap-2 text-cream/75 text-sm">
               <Calendar size={14} />
               {formatDate(post.date)}
@@ -55,37 +81,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
 
-        {/* Body */}
         <article className="py-16 lg:py-24 bg-white">
           <div className="max-w-2xl mx-auto px-5 lg:px-8">
-            <p className="text-lg text-charcoal leading-relaxed font-medium">
-              {post.excerpt}
-            </p>
-            <div className="mt-10 space-y-6 text-charcoal/90 leading-[1.8] text-[17px]">
-              <p>
-                Téma <strong className="text-brown">{post.title.toLowerCase()}</strong>{" "}
-                je u našich zákazníkov jedna z najčastejších. V tomto článku ju rozoberáme
-                z praktického pohľadu — bez teórie z učebnice, s konkrétnymi
-                odporúčaniami zo skúsenosti.
+            {post.contentHtml ? (
+              <ArticleBody html={post.contentHtml} />
+            ) : (
+              <p className="text-mutedbrand">
+                Obsah článku je v príprave. Medzitým si pozrite{" "}
+                <Link href="/realizacie" className="text-gold underline">
+                  naše realizácie
+                </Link>{" "}
+                alebo nás{" "}
+                <Link href="/kontakt" className="text-gold underline">
+                  kontaktujte
+                </Link>
+                .
               </p>
-              <p>
-                Plné znenie článku spolu s detailnými technickými parametrami
-                pripravujeme. Medzitým si pozrite naše realizácie alebo nás kontaktujte
-                — radi vám vysvetlíme všetko priamo nad konkrétnym riešením pre váš dom.
-              </p>
-              <div className="my-12 p-6 lg:p-8 rounded-2xl bg-cream/50 border border-cream">
-                <div className="text-eyebrow text-gold mb-2">Praktická rada</div>
-                <p className="font-display font-semibold text-lg text-brown leading-snug">
-                  Najlepší čas na rozhodnutie o pergole alebo zimnej záhrade je
-                  jeseň alebo skorá zima — montáž potom prebehne na jar v ideálnych
-                  podmienkach.
-                </p>
-              </div>
-              <p>
-                Pýtajte sa nás. Cenová ponuka do 24-48 hodín, bezplatná obhliadka u vás
-                doma a vizualizácia podľa vašich potrieb.
-              </p>
-            </div>
+            )}
 
             <div className="mt-12 pt-10 border-t border-cream flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
               <Link
@@ -105,7 +117,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </article>
 
-        {/* Related */}
         {related.length > 0 && (
           <section className="py-16 lg:py-20 bg-cream/40">
             <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -114,7 +125,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
                 {related.map((p) => (
-                  <Link key={p.slug} href={`/clanky/${p.slug}`} className="group">
+                  <Link key={p.slug} href={`/${p.slug}`} className="group">
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream mb-4">
                       <Image
                         src={p.image}

@@ -35,7 +35,7 @@ export default function ClankyPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <Link
-              href={`/clanky/${featured.slug}`}
+              href={`/${featured.slug}`}
               className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream">
@@ -69,7 +69,7 @@ export default function ClankyPage() {
               {rest.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/clanky/${post.slug}`}
+                  href={`/${post.slug}`}
                   className="group"
                 >
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream mb-5">

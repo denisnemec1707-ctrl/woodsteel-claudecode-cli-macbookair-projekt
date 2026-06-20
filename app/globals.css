@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* ===== WOODSTEEL BRAND THEME (Claude Code build) ===== */
 :root {

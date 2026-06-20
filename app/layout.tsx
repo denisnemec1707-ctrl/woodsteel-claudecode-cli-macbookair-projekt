@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { Analytics, GtmNoscript } from "@/components/Analytics";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -16,7 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "WoodSteel — Pergoly, zimné záhrady a zasklenia terás na mieru",
+  title: "WoodSteel.sk - Zimné záhrady, pergoly a zasklenia terás",
   description:
     "Vlastná SK výroba aj montáž. Cenová ponuka do 24 hodín, bezplatná obhliadka. 250+ realizácií, 5 rokov záruka.",
   openGraph: {
@@ -26,6 +28,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "sk_SK",
   },
+  verification: {
+    google: "YKEOg1-tX28Hj7soObmAi8-KitpGkoGqV4vRSvCZMDE",
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +38,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="sk" className={`${inter.variable} ${manrope.variable} antialiased`}>
-      <body className="bg-white text-charcoal min-h-screen flex flex-col">{children}</body>
+      <body className="bg-white text-charcoal min-h-screen flex flex-col">
+        <GtmNoscript />
+        {children}
+        <CookieConsent />
+        <Analytics />
+      </body>
     </html>
   );
 }
