@@ -15,7 +15,7 @@ export default function ShowroomPage() {
       <main className="flex-1">
         <section className="relative min-h-[60svh] flex items-end overflow-hidden">
           <Image
-            src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/showroom-rovinka.jpeg"
+            src="/images/showroom-rovinka.jpeg"
             alt="WoodSteel Showroom Rovinka"
             fill
             priority
@@ -104,7 +104,7 @@ export default function ShowroomPage() {
             <div className="space-y-5">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream">
                 <Image
-                  src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/showroom-rovinka.jpeg"
+                  src="/images/showroom-rovinka.jpeg"
                   alt="Showroom Rovinka"
                   fill
                   sizes="(min-width:1024px) 50vw, 100vw"

@@ -29,14 +29,14 @@ const INSTAGRAM_URL = "https://www.instagram.com/woodsteelsk/";
 // a live feed via Instagram Basic Display API or a service like Behold.so / Curator.io.
 // Currently uses real WoodSteel project photos as visual placeholders.
 const posts = [
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-BA-Vrakuna.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-hamuliakovo.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-senec.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-trencin.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-kittse.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-dunajska-luzna.jpeg",
-  "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-horne-janiky-1.jpeg",
+  "/images/hlinikova-pergola-BA-Vrakuna.jpeg",
+  "/images/zimna-zahrada-hamuliakovo.jpeg",
+  "/images/hlinikova-pergola-senec.jpeg",
+  "/images/zimna-zahrada-rovinka.jpeg",
+  "/images/hlinikova-pergola-trencin.jpeg",
+  "/images/zimna-zahrada-kittse.jpeg",
+  "/images/zimna-zahrada-dunajska-luzna.jpeg",
+  "/images/zimna-zahrada-horne-janiky-1.jpeg",
 ];
 
 export function InstagramFeed() {

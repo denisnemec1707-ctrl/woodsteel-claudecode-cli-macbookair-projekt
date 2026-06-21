@@ -22,7 +22,7 @@ const variants = [
     description:
       "Nastaviteľné lamely v streche regulujú slnko aj prúdenie vzduchu. Bezúdržbová konštrukcia, prirodzene odtekajúca voda, voliteľné LED osvetlenie a tienenie po stranách.",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-senec.jpeg",
+      "/images/hlinikova-pergola-senec.jpeg",
   },
   {
     name: "Drevená pergola z BSH dreva",
@@ -30,7 +30,7 @@ const variants = [
     description:
       "Lepené BSH drevo s tvarovou stálosťou, voliteľná príprava na neskoršie zasklenie. Vhodná pre tradičné aj moderné fasády. Garantovaná dlhá životnosť.",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2024/10/drevena-pergola.jpg",
+      "/images/drevena-pergola.jpg",
   },
   {
     name: "Prístrešok na auto",
@@ -38,7 +38,7 @@ const variants = [
     description:
       "Pevná hliníková alebo drevená konštrukcia chrániaca auto pred slnkom, snehom a krupobitím. Jedno alebo dvojstojiskové prevedenia s integrovaným odvodnením.",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2025/09/pristresok-na-auto3.jpeg",
+      "/images/IMG_5562.jpg",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function PergolyPage() {
           description:
             "Hliníkové bioklimatické, klasické drevené alebo prístrešky na auto. Vlastná SK výroba s 5+ rokmi záruka.",
           image:
-            "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-trencin.jpeg",
+            "/images/hlinikova-pergola-trencin.jpeg",
           priceFrom: "4990",
           category: "Pergoly",
         })}
@@ -77,7 +77,7 @@ export default function PergolyPage() {
         {/* Hero */}
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">
           <Image
-            src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-trencin.jpeg"
+            src="/images/hlinikova-pergola-trencin.jpeg"
             alt="Hliníková pergola — Trenčín"
             fill
             priority

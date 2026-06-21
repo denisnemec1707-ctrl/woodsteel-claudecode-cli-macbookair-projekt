@@ -23,7 +23,7 @@ export default function DrevenePergolyPage() {
         subtitle:
           "Lepené BSH drevo s tvarovou stálosťou, voliteľná príprava na neskoršie zasklenie. Vhodné pre tradičné aj moderné fasády.",
         image:
-          "https://newdev.woodsteel.sk/wp-content/uploads/2024/10/drevena-pergola.jpg",
+          "/images/drevena-pergola.jpg",
         priceFrom: "4 990 €",
       }}
       intro={{

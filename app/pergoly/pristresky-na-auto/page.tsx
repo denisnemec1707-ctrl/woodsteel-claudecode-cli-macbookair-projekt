@@ -22,7 +22,7 @@ export default function PristreskyNaAutoPage() {
         subtitle:
           "Hliníkové alebo drevené konštrukcie chrániace auto pred slnkom, snehom a krupobitím. Jedno alebo dvojstojiskové prevedenia s integrovaným odvodnením.",
         image:
-          "https://newdev.woodsteel.sk/wp-content/uploads/2025/07/IMG_5562.jpg",
+          "/images/IMG_5562.jpg",
         priceFrom: "3 490 €",
       }}
       intro={{

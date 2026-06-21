@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[88svh] sm:min-h-[100svh] flex items-end overflow-hidden">
       <Image
-        src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg"
+        src="/images/zimna-zahrada-rovinka.jpeg"
         alt="Zimná záhrada — Rovinka"
         fill
         priority

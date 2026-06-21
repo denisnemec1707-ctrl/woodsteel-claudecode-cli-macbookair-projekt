@@ -23,7 +23,7 @@ export default function HlinikovePergolyPage() {
         subtitle:
           "Hliník bez údržby. Nastaviteľné lamely v streche regulujú slnko aj prúdenie vzduchu. Plne integrované LED osvetlenie a tienenie po stranách.",
         image:
-          "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-senec.jpeg",
+          "/images/hlinikova-pergola-senec.jpeg",
         priceFrom: "5 990 €",
       }}
       intro={{

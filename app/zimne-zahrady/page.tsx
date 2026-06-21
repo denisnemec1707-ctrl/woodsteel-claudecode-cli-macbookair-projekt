@@ -22,7 +22,7 @@ const variants = [
     description:
       "Štíhle profily, izolačné dvojsklo, bezúdržbová konštrukcia s desaťročiami životnosti. Veľké presklené plochy + kvalitné tesnenie umožňujú celoročné používanie.",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-hamuliakovo.jpeg",
+      "/images/zimna-zahrada-hamuliakovo.jpeg",
   },
   {
     name: "Drevená zimná záhrada",
@@ -30,7 +30,7 @@ const variants = [
     description:
       "Lepené BSH drevo dodáva priestoru teplo a charakter klasiky. Konštrukcia z tvarovo stálych profilov, garantovaná dlhá životnosť.",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2024/11/drevena-zimna-zahrada5.jpg",
+      "/images/drevena-zimna-zahrada5.jpg",
   },
   {
     name: "Sezónna zimná záhrada",
@@ -38,7 +38,7 @@ const variants = [
     description:
       "Cenovo dostupnejšia varianta s ľahšou konštrukciou — vynikajúca pre jar/leto/jeseň. V zime sa odporúča vykurovaná verzia.",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg",
+      "/images/zimna-zahrada-rovinka.jpeg",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function ZimneZahradyPage() {
           description:
             "Hliníkové alebo drevené zimné záhrady na mieru. Izolačné dvojsklo, sliding systémy. Vlastná SK výroba.",
           image:
-            "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg",
+            "/images/zimna-zahrada-rovinka.jpeg",
           priceFrom: "12990",
           category: "Zimné záhrady",
         })}
@@ -74,7 +74,7 @@ export default function ZimneZahradyPage() {
       <main className="flex-1">
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">
           <Image
-            src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg"
+            src="/images/zimna-zahrada-rovinka.jpeg"
             alt="Zimná záhrada — Rovinka"
             fill
             priority

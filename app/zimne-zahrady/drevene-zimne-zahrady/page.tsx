@@ -23,7 +23,7 @@ export default function DreveneZimneZahradyPage() {
         subtitle:
           "Lepené BSH drevo dodáva priestoru teplo a charakter klasiky. Konštrukcia z tvarovo stálych profilov, garantovaná dlhá životnosť.",
         image:
-          "https://newdev.woodsteel.sk/wp-content/uploads/2024/11/drevena-zimna-zahrada5.jpg",
+          "/images/drevena-zimna-zahrada5.jpg",
         priceFrom: "14 990 €",
       }}
       intro={{

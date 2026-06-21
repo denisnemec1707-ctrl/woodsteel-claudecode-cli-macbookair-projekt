@@ -38,7 +38,7 @@ export default function ONasPage() {
       <main className="flex-1">
         <section className="relative min-h-[60svh] flex items-end overflow-hidden">
           <Image
-            src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-hamuliakovo.jpeg"
+            src="/images/zimna-zahrada-hamuliakovo.jpeg"
             alt="WoodSteel — náš príbeh"
             fill
             priority

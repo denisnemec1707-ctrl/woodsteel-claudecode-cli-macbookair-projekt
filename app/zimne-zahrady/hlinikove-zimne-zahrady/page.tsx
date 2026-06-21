@@ -23,7 +23,7 @@ export default function HlinikoveZimneZahradyPage() {
         subtitle:
           "Štíhle profily (od 50 mm), izolačné dvojsklo, bezúdržbová konštrukcia s desaťročiami životnosti. Veľké presklené plochy + kvalitné tesnenie pre celoročné používanie.",
         image:
-          "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-hamuliakovo.jpeg",
+          "/images/zimna-zahrada-hamuliakovo.jpeg",
         priceFrom: "12 990 €",
       }}
       intro={{

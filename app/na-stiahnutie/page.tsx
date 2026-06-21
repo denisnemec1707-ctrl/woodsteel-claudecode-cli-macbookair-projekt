@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FileText, Download } from "lucide-react";
+import { FileText, Download, Archive } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
@@ -9,17 +9,46 @@ import { CatalogDownload } from "@/components/CatalogDownload";
 
 export const metadata: Metadata = {
   title: "Na stiahnutie - WoodSteel.sk",
-  description: "PDF katalógy, technické listy, montážne návody a referenčné dokumenty na stiahnutie.",
+  description: "PDF katalógy, reklamačné formuláre a referenčné dokumenty na stiahnutie.",
   alternates: { canonical: "https://woodsteel.sk/na-stiahnutie/" },
 };
 
-const docs = [
-  { title: "Kompletný PDF katalóg 2026", size: "12 MB", note: "Všetky produkty + ceny + realizácie", action: "Vyžiadať e-mailom" },
-  { title: "Technický list — Bioklimatická pergola", size: "1.8 MB", note: "Rozmery, profily, statika", action: "Stiahnuť" },
-  { title: "Technický list — Hliníková zimná záhrada", size: "2.4 MB", note: "Profily, sklo, sliding systémy", action: "Stiahnuť" },
-  { title: "Montážny návod (všeobecný)", size: "0.9 MB", note: "Postup prípravy základov pre montáž", action: "Stiahnuť" },
-  { title: "Záručné podmienky", size: "0.3 MB", note: "5+ rokov záruka — detaily", action: "Stiahnuť" },
+type Doc = {
+  title: string;
+  file: string;
+  size: string;
+  note: string;
+  type: "pdf" | "docx";
+};
+
+const docs: Doc[] = [
+  {
+    title: "WoodSteel katalóg 2025",
+    file: "/download/woodsteel-katalog-2025.pdf",
+    size: "7.0 MB",
+    note: "Kompletný produktový katalóg — pergoly, zimné záhrady, zasklenia, doplnky",
+    type: "pdf",
+  },
+  {
+    title: "Reklamačný formulár (PDF)",
+    file: "/download/reklamacny-formular.pdf",
+    size: "41 KB",
+    note: "Vytlačiť, vyplniť a zaslať poštou alebo e-mailom na info@woodsteel.sk",
+    type: "pdf",
+  },
+  {
+    title: "Reklamačný formulár (Word)",
+    file: "/download/reklamacny-formular.docx",
+    size: "6 KB",
+    note: "Editovateľná verzia pre Microsoft Word / Pages / Google Docs",
+    type: "docx",
+  },
 ];
+
+const fileColor = {
+  pdf: "text-rose-500 bg-rose-500/10",
+  docx: "text-blue-500 bg-blue-500/10",
+};
 
 export default function NaStiahnutiePage() {
   return (
@@ -37,7 +66,7 @@ export default function NaStiahnutiePage() {
               Dokumenty <span className="text-gold">na stiahnutie.</span>
             </h1>
             <p className="mt-5 text-mutedbrand text-base lg:text-lg max-w-2xl mx-auto">
-              PDF katalógy, technické listy, montážne návody a záručné podmienky.
+              Produktový katalóg, reklamačné formuláre a referenčné dokumenty.
             </p>
           </div>
         </section>
@@ -45,22 +74,27 @@ export default function NaStiahnutiePage() {
         <section className="py-16 lg:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-5 lg:px-8 space-y-4">
             {docs.map((d) => (
-              <article
-                key={d.title}
-                className="flex items-center gap-5 p-5 lg:p-6 bg-white border border-cream rounded-2xl hover:border-gold/40 hover:shadow-[0_8px_24px_rgba(63,34,17,0.06)] transition-all"
+              <a
+                key={d.file}
+                href={d.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-5 p-5 lg:p-6 bg-white border border-cream rounded-2xl hover:border-gold/40 hover:shadow-[0_8px_24px_rgba(63,34,17,0.06)] hover:-translate-y-0.5 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                  <FileText size={20} className="text-gold" />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${fileColor[d.type]}`}>
+                  {d.type === "pdf" ? <FileText size={20} /> : <Archive size={20} />}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-display font-bold text-brown">{d.title}</div>
-                  <div className="text-xs text-mutedbrand mt-1">{d.note} · PDF · {d.size}</div>
+                  <div className="text-xs text-mutedbrand mt-1">
+                    {d.note} · {d.type.toUpperCase()} · {d.size}
+                  </div>
                 </div>
-                <button className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 bg-gold hover:bg-gold-hover text-brown hover:text-white font-semibold text-sm rounded-full transition-all">
+                <span className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 bg-gold hover:bg-gold-hover text-brown hover:text-white font-semibold text-sm rounded-full transition-all">
                   <Download size={14} />
-                  {d.action}
-                </button>
-              </article>
+                  Stiahnuť
+                </span>
+              </a>
             ))}
           </div>
         </section>

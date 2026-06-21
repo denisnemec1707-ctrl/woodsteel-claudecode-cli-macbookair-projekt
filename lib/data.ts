@@ -4,27 +4,27 @@ export const team = [
   {
     name: "Branislav Kmec",
     role: "Zakladateľ",
-    photo: "https://woodsteel.sk/wp-content/uploads/2026/06/BranoKmecBG.png",
+    photo: "/images/BranoKmecBG.png",
     quote:
       "Moja vízia je napredovať, držať krok s trendmi a zároveň si zachovať ľudský, proklientský prístup.",
   },
   {
     name: "Denis Nemec",
     role: "Zakladateľ",
-    photo: "https://woodsteel.sk/wp-content/uploads/2026/06/DenisNemecBG.png",
+    photo: "/images/DenisNemecBG.png",
     quote:
       "Mojou prioritou je, aby sme ako spoločnosť doručovali čo najvyššiu hodnotu našim zákazníkom.",
   },
   {
     name: "Peter Kurilla",
     role: "Riaditeľ obchodného oddelenia",
-    photo: "https://woodsteel.sk/wp-content/uploads/2026/06/PeterKurillaBG.png",
+    photo: "/images/PeterKurillaBG.png",
     quote: "V obore sa pohybujem už viac než 5 rokov.",
   },
   {
     name: "Viktor Farda",
     role: "Senior obchodný manažér",
-    photo: "https://woodsteel.sk/wp-content/uploads/2026/06/ViktorFardaBG.png",
+    photo: "/images/ViktorFardaBG.png",
     quote:
       "Pôsobím na pozícii senior obchodného manažéra s dlhoročnými skúsenosťami.",
   },
@@ -35,55 +35,55 @@ export const realizations = [
     location: "BA — Vrakuňa",
     category: "Hliníková pergola",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-BA-Vrakuna.jpeg",
+      "/images/hlinikova-pergola-BA-Vrakuna.jpeg",
   },
   {
     location: "Hamuliakovo",
     category: "Zimná záhrada",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-hamuliakovo.jpeg",
+      "/images/zimna-zahrada-hamuliakovo.jpeg",
   },
   {
     location: "Senec",
     category: "Hliníková pergola",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-senec.jpeg",
+      "/images/hlinikova-pergola-senec.jpeg",
   },
   {
     location: "Rovinka",
     category: "Zimná záhrada",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg",
+      "/images/zimna-zahrada-rovinka.jpeg",
   },
   {
     location: "Dunajská Lužná",
     category: "Zimná záhrada",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-dunajska-luzna.jpeg",
+      "/images/zimna-zahrada-dunajska-luzna.jpeg",
   },
   {
     location: "Trenčín — Soblahov",
     category: "Hliníková pergola",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-trencin.jpeg",
+      "/images/hlinikova-pergola-trencin.jpeg",
   },
   {
     location: "Kittsee",
     category: "Zimná záhrada",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-kittse.jpeg",
+      "/images/zimna-zahrada-kittse.jpeg",
   },
   {
     location: "BA — Podunajské Biskupice",
     category: "Zimná záhrada",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-podunajske-biskupice.jpeg",
+      "/images/zimna-zahrada-podunajske-biskupice.jpeg",
   },
   {
     location: "Horné Janíky",
     category: "Zimná záhrada",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-horne-janiky-1.jpeg",
+      "/images/zimna-zahrada-horne-janiky-1.jpeg",
   },
 ];
 
@@ -135,7 +135,7 @@ export const categories = [
       "Bioklimatické pergoly s nastaviteľnými lamelami alebo klasické drevené konštrukcie z lepeného BSH dreva. Príprava na neskoršie zasklenie.",
     priceFrom: "4 990 €",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/hlinikova-pergola-senec.jpeg",
+      "/images/hlinikova-pergola-senec.jpeg",
   },
   {
     slug: "zimne-zahrady",
@@ -145,7 +145,7 @@ export const categories = [
       "Plnohodnotná obytná zóna nezávislá od počasia. Izolačné dvojsklo, sliding systémy s plynulým otváraním.",
     priceFrom: "12 990 €",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-rovinka.jpeg",
+      "/images/zimna-zahrada-rovinka.jpeg",
   },
   {
     slug: "zasklenie-teras",
@@ -155,7 +155,7 @@ export const categories = [
       "Premena otvorenej terasy na chránený priestor počas chladnejších mesiacov. Plne posuvné, otvorené v lete, uzavreté v zime.",
     priceFrom: "3 290 €",
     image:
-      "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-horne-janiky.jpeg",
+      "/images/zimna-zahrada-horne-janiky.jpeg",
   },
 ];
 

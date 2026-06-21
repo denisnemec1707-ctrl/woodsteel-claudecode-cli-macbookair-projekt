@@ -34,7 +34,7 @@ export default function ZasklenieTerasPage() {
           description:
             "Bezrámové posuvné systémy pre zasklenie terás. V lete otvorené, v zime uzavretý priestor.",
           image:
-            "https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-horne-janiky.jpeg",
+            "/images/zimna-zahrada-horne-janiky.jpeg",
           priceFrom: "3290",
           category: "Zasklenia",
         })}
@@ -44,7 +44,7 @@ export default function ZasklenieTerasPage() {
       <main className="flex-1">
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">
           <Image
-            src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-horne-janiky.jpeg"
+            src="/images/zimna-zahrada-horne-janiky.jpeg"
             alt="Zasklenie terasy"
             fill
             priority
@@ -86,7 +86,7 @@ export default function ZasklenieTerasPage() {
 
             <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                <Image src="https://newdev.woodsteel.sk/wp-content/uploads/2026/03/zimna-zahrada-horne-janiky.jpeg" alt="Zasklenie terasy" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
+                <Image src="/images/zimna-zahrada-horne-janiky.jpeg" alt="Zasklenie terasy" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
               </div>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                 {features.map((f) => (
