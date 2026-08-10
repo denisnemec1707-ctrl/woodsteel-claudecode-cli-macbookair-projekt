@@ -70,7 +70,7 @@ export default function ZimneZahradyPage() {
         })}
       />
       <JsonLd data={faqSchema(zimnaZahradaFaqs)} />
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">
           <Image

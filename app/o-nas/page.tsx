@@ -34,7 +34,7 @@ const values = [
 export default function ONasPage() {
   return (
     <>
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[60svh] flex items-end overflow-hidden">
           <Image

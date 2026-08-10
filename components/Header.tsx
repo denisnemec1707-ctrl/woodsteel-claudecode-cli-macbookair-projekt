@@ -3,13 +3,37 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation } from "@/lib/data";
 
-export function Header() {
+/** Odstráni #hash a koncové lomítko, aby sa dali porovnávať cesty. */
+function normalize(href: string) {
+  const path = href.split("#")[0];
+  return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+}
+
+function isActive(pathname: string, href: string, match?: string[]) {
+  const targets = (match ?? [href]).map(normalize).filter(Boolean);
+  return targets.some(
+    (t) => t !== "/" && (pathname === t || pathname.startsWith(`${t}/`))
+  );
+}
+
+type HeaderProps = {
+  /**
+   * `true` pre stránky s tmavým celoplošným hero — menu splýva s obrázkom
+   * a zosvetlí sa až po scrollnutí. Default `false` = vždy čitateľná
+   * svetlá lišta (bezpečné pre stránky so svetlým pozadím).
+   */
+  overlay?: boolean;
+};
+
+export function Header({ overlay = false }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -23,16 +47,27 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  // Priehľadné menu iba nad tmavým hero, kým používateľ neodscrolluje.
+  const transparent = overlay && !scrolled && !open;
+
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(63,34,17,0.08)]"
-          : "bg-transparent"
+        transparent
+          ? "bg-transparent"
+          : "bg-white/92 backdrop-blur-xl border-b border-cream/70 shadow-[0_4px_24px_rgba(63,34,17,0.08)]"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 h-14 sm:h-16 lg:h-20 flex items-center justify-between gap-4 sm:gap-6">
+      {/* Scrim: drží biely text čitateľný aj nad svetlými miestami fotky */}
+      {transparent && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brown/70 via-brown/30 to-transparent"
+        />
+      )}
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 h-14 sm:h-16 lg:h-20 flex items-center justify-between gap-4 sm:gap-6">
         {/* Logo */}
         <Link href="/" className="flex items-center group shrink-0" aria-label="WoodSteel — domov">
           <Image
@@ -43,42 +78,72 @@ export function Header() {
             priority
             className={cn(
               "h-8 sm:h-10 lg:h-12 w-auto transition-[filter] duration-300",
-              scrolled || open ? "" : "[filter:brightness(0)_invert(1)]"
+              transparent ? "[filter:brightness(0)_invert(1)_drop-shadow(0_1px_3px_rgba(0,0,0,0.45))]" : ""
             )}
           />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-9">
-          {navigation.map((item) => (
-            <div key={item.label} className="group relative">
-              <Link
-                href={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors inline-flex items-center gap-1",
-                  scrolled ? "text-charcoal hover:text-gold" : "text-white/95 hover:text-gold"
-                )}
-              >
-                {item.label}
-                {item.submenu && <ChevronDown size={14} className="opacity-60 transition-transform group-hover:rotate-180" />}
-              </Link>
-              {item.submenu && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white rounded-xl shadow-xl border border-cream py-2 min-w-[220px]">
-                    {item.submenu.map((s) => (
-                      <Link
-                        key={s.href}
-                        href={s.href}
-                        className="block px-5 py-3 text-sm text-charcoal hover:bg-cream/50 hover:text-gold transition-colors"
-                      >
-                        {s.label}
-                      </Link>
-                    ))}
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          {navigation.map((item) => {
+            const active = isActive(pathname, item.href, item.match);
+            return (
+              <div key={item.label} className="group relative">
+                <Link
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative text-sm font-medium transition-colors inline-flex items-center gap-1 py-1",
+                    active
+                      ? transparent
+                        ? "text-gold"
+                        : "text-gold"
+                      : transparent
+                        ? "text-white hover:text-gold [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]"
+                        : "text-charcoal hover:text-gold"
+                  )}
+                >
+                  {item.label}
+                  {item.submenu && (
+                    <ChevronDown size={14} className="opacity-60 transition-transform group-hover:rotate-180" />
+                  )}
+                  {/* Podčiarknutie aktívnej sekcie */}
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-gold transition-all duration-300",
+                      active ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-60"
+                    )}
+                  />
+                </Link>
+
+                {item.submenu && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-white rounded-xl shadow-xl border border-cream py-2 min-w-[220px]">
+                      {item.submenu.map((s) => {
+                        const subActive = isActive(pathname, s.href);
+                        return (
+                          <Link
+                            key={s.href}
+                            href={s.href}
+                            aria-current={subActive ? "page" : undefined}
+                            className={cn(
+                              "block px-5 py-3 text-sm transition-colors",
+                              subActive
+                                ? "bg-cream/60 text-gold font-semibold"
+                                : "text-charcoal hover:bg-cream/50 hover:text-gold"
+                            )}
+                          >
+                            {s.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Right side: phone + CTA */}
@@ -86,8 +151,10 @@ export function Header() {
           <a
             href="tel:+421904473111"
             className={cn(
-              "hidden md:inline-flex items-center gap-2 text-sm font-medium transition-colors",
-              scrolled ? "text-charcoal hover:text-gold" : "text-white hover:text-gold"
+              "hidden xl:inline-flex items-center gap-2 text-sm font-medium transition-colors",
+              transparent
+                ? "text-white hover:text-gold [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]"
+                : "text-charcoal hover:text-gold"
             )}
           >
             <Phone size={16} />
@@ -103,9 +170,10 @@ export function Header() {
             onClick={() => setOpen(!open)}
             className={cn(
               "lg:hidden p-2 transition-colors",
-              scrolled || open ? "text-charcoal" : "text-white"
+              transparent ? "text-white" : "text-charcoal"
             )}
             aria-label="Menu"
+            aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -114,33 +182,56 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-cream">
+        <div className="lg:hidden bg-white border-t border-cream max-h-[calc(100svh-3.5rem)] overflow-y-auto">
           <nav className="max-w-7xl mx-auto px-5 py-6 flex flex-col gap-1">
-            {navigation.map((item) => (
-              <div key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-base font-medium text-charcoal hover:text-gold transition-colors"
-                >
-                  {item.label}
-                </Link>
-                {item.submenu && (
-                  <div className="pl-6 pb-2 flex flex-col">
-                    {item.submenu.map((s) => (
-                      <Link
-                        key={s.href}
-                        href={s.href}
-                        onClick={() => setOpen(false)}
-                        className="px-3 py-2 text-sm text-mutedbrand hover:text-gold transition-colors"
-                      >
-                        {s.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+            {navigation.map((item) => {
+              const active = isActive(pathname, item.href, item.match);
+              return (
+                <div key={item.label}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-3 text-base font-medium transition-colors",
+                      active
+                        ? "bg-cream/60 text-gold font-semibold"
+                        : "text-charcoal hover:text-gold"
+                    )}
+                  >
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "h-5 w-0.5 rounded-full transition-colors",
+                        active ? "bg-gold" : "bg-transparent"
+                      )}
+                    />
+                    {item.label}
+                  </Link>
+                  {item.submenu && (
+                    <div className="pl-6 pb-2 flex flex-col">
+                      {item.submenu.map((s) => {
+                        const subActive = isActive(pathname, s.href);
+                        return (
+                          <Link
+                            key={s.href}
+                            href={s.href}
+                            onClick={() => setOpen(false)}
+                            aria-current={subActive ? "page" : undefined}
+                            className={cn(
+                              "px-3 py-2 text-sm transition-colors",
+                              subActive ? "text-gold font-semibold" : "text-mutedbrand hover:text-gold"
+                            )}
+                          >
+                            {s.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
             <a
               href="tel:+421904473111"
               className="flex items-center gap-2 mt-4 px-3 py-3 text-base font-medium text-charcoal border-t border-cream"

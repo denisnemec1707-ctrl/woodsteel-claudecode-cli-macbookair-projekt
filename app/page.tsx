@@ -22,7 +22,7 @@ export default function HomePage() {
     <>
       <JsonLd data={localBusinessSchema} />
       <JsonLd data={faqSchema(generalFaqs)} />
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         <Hero />
         <TrustStrip />

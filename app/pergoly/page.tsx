@@ -72,7 +72,7 @@ export default function PergolyPage() {
         })}
       />
       <JsonLd data={faqSchema(pergolaFaqs)} />
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         {/* Hero */}
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">

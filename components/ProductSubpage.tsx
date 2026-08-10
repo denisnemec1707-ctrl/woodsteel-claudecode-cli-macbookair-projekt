@@ -36,7 +36,7 @@ export function ProductSubpage({ breadcrumb, hero, intro, features, realizationF
 
   return (
     <>
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[70svh] sm:min-h-[80svh] flex items-end overflow-hidden">
           <Image src={hero.image} alt={typeof hero.title === "string" ? hero.title : hero.eyebrow} fill priority sizes="100vw" className="object-cover" />

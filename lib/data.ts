@@ -174,14 +174,17 @@ export const stats = [
   { value: "24h", label: "Cenová ponuka" },
 ];
 
+// `match` = cesty, pri ktorých sa položka označí ako aktívna (prefixová zhoda).
+// Ak chýba, použije sa `href`.
 export const navigation = [
-  { label: "Produkty", href: "/pergoly", submenu: [
+  { label: "Produkty", href: "/pergoly", match: ["/pergoly", "/zimne-zahrady", "/zasklenie-teras"], submenu: [
     { label: "Pergoly", href: "/pergoly" },
     { label: "Zimné záhrady", href: "/zimne-zahrady" },
     { label: "Zasklenie terás", href: "/zasklenie-teras" },
     { label: "Prístrešky na auto", href: "/pergoly#carport" },
   ]},
   { label: "Realizácie", href: "/realizacie" },
+  { label: "Showroom", href: "/showroom" },
   { label: "Články", href: "/clanky" },
   { label: "O nás", href: "/o-nas" },
   { label: "FAQ", href: "/faq" },

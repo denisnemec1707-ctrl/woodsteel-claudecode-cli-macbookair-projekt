@@ -40,7 +40,7 @@ export default function ZasklenieTerasPage() {
         })}
       />
       <JsonLd data={faqSchema(zasklenieFaqs)} />
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">
           <Image

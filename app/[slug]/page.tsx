@@ -53,7 +53,7 @@ export default async function ArticleAtRoot({
 
   return (
     <>
-      <Header />
+      <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[55svh] flex items-end overflow-hidden">
           <Image
