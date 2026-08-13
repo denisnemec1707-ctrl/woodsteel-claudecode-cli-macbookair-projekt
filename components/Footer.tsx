@@ -40,7 +40,7 @@ export function Footer() {
             />
             <p className="mt-5 text-cream/70 text-sm leading-relaxed max-w-xs">
               Pergoly, zimné záhrady a zasklenia terás na mieru. Vlastná SK
-              výroba aj montáž od roku 2008.
+              výroba aj montáž od roku 2021.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/8 hover:bg-gold flex items-center justify-center transition-colors">

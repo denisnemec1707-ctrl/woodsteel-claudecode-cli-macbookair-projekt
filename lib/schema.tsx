@@ -11,7 +11,7 @@ export const localBusinessSchema = {
   logo: `${SITE_URL}/logo/woodsteel-logo.png`,
   image: `${SITE_URL}/logo/woodsteel-logo.png`,
   description:
-    "Pergoly, zimné záhrady a zasklenia terás na mieru. Vlastná SK výroba a montáž od roku 2008.",
+    "Pergoly, zimné záhrady a zasklenia terás na mieru. Vlastná SK výroba a montáž od roku 2021.",
   telephone: "+421904473111",
   email: "info@woodsteel.sk",
   priceRange: "€€€",

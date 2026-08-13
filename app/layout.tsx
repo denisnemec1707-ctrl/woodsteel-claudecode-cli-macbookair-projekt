@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "WoodSteel — Outdoor priestor, ktorý milujete celý rok",
     description:
-      "Pergoly, zimné záhrady, zasklenia terás. Vlastná SK výroba a montáž od roku 2008.",
+      "Pergoly, zimné záhrady, zasklenia terás. Vlastná SK výroba a montáž od roku 2021.",
     type: "website",
     locale: "sk_SK",
   },

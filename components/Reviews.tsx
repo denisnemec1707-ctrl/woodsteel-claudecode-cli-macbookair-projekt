@@ -3,6 +3,10 @@ import { SectionHeader } from "./SectionHeader";
 import { reviews } from "@/lib/data";
 
 export function Reviews() {
+  // Bez recenzií sekciu vôbec nevykresľujeme — na web nepatria vymyslené
+  // referencie. Po doplnení skutočných textov do `reviews` sa objaví sama.
+  if (reviews.length === 0) return null;
+
   return (
     <section id="reviews" className="py-16 sm:py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -28,9 +32,11 @@ export function Reviews() {
               </p>
               <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-cream/80">
                 <div className="font-display font-bold text-brown">{r.name}</div>
-                <div className="text-xs text-mutedbrand mt-0.5">
-                  {r.location} · {r.time}
-                </div>
+                {(r.location || r.time) && (
+                  <div className="text-xs text-mutedbrand mt-0.5">
+                    {[r.location, r.time].filter(Boolean).join(" · ")}
+                  </div>
+                )}
               </div>
             </article>
           ))}

@@ -30,12 +30,6 @@ export function Categories() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brown/95 via-brown/40 to-transparent" />
 
-              {/* Price badge — top right */}
-              {c.priceFrom && (
-                <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm text-brown font-display font-bold text-xs sm:text-sm shadow-md">
-                  od {c.priceFrom}
-                </div>
-              )}
               <div className="absolute inset-0 p-6 sm:p-7 lg:p-10 flex flex-col justify-end text-white">
                 <div className="text-eyebrow text-gold mb-2 sm:mb-3">{c.tagline}</div>
                 <h3 className="text-2xl sm:text-display-3 font-bold text-white">{c.name}</h3>

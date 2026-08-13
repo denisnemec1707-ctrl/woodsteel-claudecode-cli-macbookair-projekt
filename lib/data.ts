@@ -87,42 +87,38 @@ export const realizations = [
   },
 ];
 
-export const reviews = [
+// Skutočné recenzie zákazníkov. Text je prevzatý doslovne — citáty
+// neupravujeme. `location` a `time` sú voliteľné, karta ich zobrazí,
+// len ak sú vyplnené.
+export const reviews: {
+  name: string;
+  text: string;
+  location?: string;
+  time?: string;
+}[] = [
   {
-    name: "Martin K.",
-    location: "Bratislava",
-    time: "pred 3 mesiacmi",
-    text: "Komunikácia od prvého telefonátu po odovzdanie kľúčov bola na vysokej úrovni. Cenovú ponuku sme mali na druhý deň ráno, montáž prebehla presne ako sľúbili. Pergola stojí už druhú sezónu a stále vyzerá ako prvý deň.",
+    name: "Alena C.",
+    text: "Zimnú záhradu od Woodsteelu vrele odporúčame. Je nad očakávanie 👌 Ak ju chcete užívať už na jar, neváhajte si ju objednať už teraz. Ďakujeme zvlášť pánovi Kurillovi za vysoko profesionálne jednanie so zákazníkom 👍",
   },
   {
-    name: "Jana N.",
-    location: "Senec",
-    time: "pred 2 mesiacmi",
-    text: "Vybrali sme si zimnú záhradu po dlhšom hľadaní a porovnávaní troch firiem. WoodSteel bol jediný, kde sme dostali konkrétne riešenie pre náš atypický balkón. Manželka je z toho nadšená, konečne má svoju kávovú izbu.",
+    name: "Naďa G.",
+    text: "Dlho sme sa rozhodovali nad firmou, ktorú si zvolíme a som nesmierne rada, že som sa rozhodla práve pre Woodsteel. Neskutočne milý a ochotný personál s promptnou komunikáciou a profesionálnym prístupom. Zimnú záhradu nám dokončili ešte pred termínom, čo nás potešilo ešte viac. Za nás určite odporúčam. :)",
   },
   {
-    name: "Ľuboš H.",
-    location: "Hamuliakovo",
-    time: "pred 6 mesiacmi",
-    text: "Spolupráca bola profesionálna od A po Z. Páni z merania sa pýtali na detaily, ktoré by nám ani nenapadli. Výsledok presne podľa vizualizácie.",
+    name: "Radka Š.",
+    text: "Určite odporúčam, výborná komunikácia od začiatku až do konca, odborný a profesionálny prístup, precízna práca a vysoká kvalita. O zákazníka sa starajú. Výsledok skutočne stojí za to.",
   },
   {
-    name: "Tomáš V.",
-    location: "Trenčín",
-    time: "pred 5 mesiacmi",
-    text: "Prístrešok na auto stojí už rok a poradil si so všetkým — víchorom, snehom aj parným letom. Cena bola férová, prácu si dotiahli do detailu.",
+    name: "Veronika H.",
+    text: "Spoločnosť nám montovala hliníkovú pergolu. Od prvého kontaktu perfektná a zrozumiteľná komunikácia, rýchle dodanie a montáž prebehla bez problémov za pár hodín. Perfektná práca, ďakujeme :)",
   },
   {
-    name: "Katarína S.",
-    location: "Rovinka",
-    time: "pred rokom",
-    text: "Hľadali sme niekoho, kto urobí drevenú pergolu s prípravou na neskoršie zasklenie. WoodSteel ako jeden z mála ponúkol presne toto riešenie. Po roku sme zasklenie aj zrealizovali — zladenie sedí na milimeter.",
+    name: "Roman Z.",
+    text: "Máme od nich presklenie terasy. Perfektná komunikácia s obchodným zástupcom, profesionálne zameranie a montáž. Môžem iba odporučiť. 👍",
   },
   {
-    name: "Zuzana M.",
-    location: "Dunajská Lužná",
-    time: "pred 4 mesiacmi",
-    text: "Odporúčam každému, kto chce istotu, že to čo si objedná, aj dostane. Žiadne dodatočné poplatky, žiadne „to sme nepočítali\". Cena z ponuky = cena na faktúre.",
+    name: "Tomáš M.",
+    text: "Dostal som odporúčanie od spokojného suseda a taktiež môžem len odporučiť. Boli mi vysvetlené všetky detaily, ktoré som potreboval ujasniť. Samotná realizácia behom jedného pracovného dňa. Známa skúsenosť hodná recenzie. Určite odporučím rád aj ja ďalej.",
   },
 ];
 

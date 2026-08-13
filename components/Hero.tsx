@@ -22,7 +22,7 @@ export function Hero() {
           <div className="reveal">
             <span className="text-eyebrow text-gold inline-flex items-center gap-2">
               <span className="w-8 h-px bg-gold" />
-              Konštrukcie na mieru od roku 2008
+              Konštrukcie na mieru od roku 2021
             </span>
           </div>
 
