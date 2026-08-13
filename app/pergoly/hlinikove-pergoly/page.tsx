@@ -24,7 +24,6 @@ export default function HlinikovePergolyPage() {
           "Hliník bez údržby. Nastaviteľné lamely v streche regulujú slnko aj prúdenie vzduchu. Plne integrované LED osvetlenie a tienenie po stranách.",
         image:
           "/images/hlinikova-pergola-senec.jpeg",
-        priceFrom: "5 990 €",
       }}
       intro={{
         title: "Bioklimatický komfort",
@@ -44,7 +43,6 @@ export default function HlinikovePergolyPage() {
       realizationFilter={(c) => c.toLowerCase().includes("hliníková pergola") || c.toLowerCase().includes("pergola")}
       faqs={pergolaFaqs.slice(0, 5)}
       stickyName="Hliníková pergola"
-      stickyPriceFrom="5 990 €"
     />
   );
 }

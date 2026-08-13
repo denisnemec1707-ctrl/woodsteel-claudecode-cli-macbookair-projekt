@@ -34,7 +34,6 @@ export default function ZasklenieTerasPage() {
             "Bezrámové posuvné systémy pre zasklenie terás. V lete otvorené, v zime uzavretý priestor.",
           image:
             "/images/zimna-zahrada-horne-janiky.jpeg",
-          priceFrom: "3290",
           category: "Zasklenia",
         })}
       />
@@ -60,10 +59,6 @@ export default function ZasklenieTerasPage() {
             <h1 className="text-display-1 font-extrabold text-white max-w-3xl">
               Otvorené v lete. <span className="text-gold">Chránené v zime.</span>
             </h1>
-            <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/12 backdrop-blur-md border border-gold/40 text-cream text-sm">
-              <span className="font-display font-bold text-gold">od 3 290 €</span>
-              <span>s DPH</span>
-            </div>
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">
               Bezrámové posuvné systémy premenia vašu terasu na ďalšiu izbu —
               kedy potrebujete, otvorené alebo uzavreté jediným pohybom.

@@ -64,7 +64,6 @@ export default function ZimneZahradyPage() {
             "Hliníkové alebo drevené zimné záhrady na mieru. Izolačné dvojsklo, sliding systémy. Vlastná SK výroba.",
           image:
             "/images/zimna-zahrada-rovinka.jpeg",
-          priceFrom: "12990",
           category: "Zimné záhrady",
         })}
       />
@@ -90,10 +89,6 @@ export default function ZimneZahradyPage() {
             <h1 className="text-display-1 font-extrabold text-white max-w-3xl">
               Zimné záhrady, kde sa <span className="text-gold">leto nikdy nekončí.</span>
             </h1>
-            <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/12 backdrop-blur-md border border-gold/40 text-cream text-sm">
-              <span className="font-display font-bold text-gold">od 12 990 €</span>
-              <span>s DPH</span>
-            </div>
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">
               Plnohodnotná obytná zóna nezávislá od počasia. Hliník alebo drevo,
               izolačné dvojsklo, sliding systémy s plynulým otváraním.

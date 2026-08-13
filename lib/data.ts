@@ -129,7 +129,6 @@ export const categories = [
     tagline: "Hliníkové · Drevené · Prístrešky na auto",
     description:
       "Bioklimatické pergoly s nastaviteľnými lamelami alebo klasické drevené konštrukcie z lepeného BSH dreva. Príprava na neskoršie zasklenie.",
-    priceFrom: "4 990 €",
     image:
       "/images/hlinikova-pergola-senec.jpeg",
   },
@@ -139,7 +138,6 @@ export const categories = [
     tagline: "Celoročné · Sezónne · Hliník · Drevo",
     description:
       "Plnohodnotná obytná zóna nezávislá od počasia. Izolačné dvojsklo, sliding systémy s plynulým otváraním.",
-    priceFrom: "12 990 €",
     image:
       "/images/zimna-zahrada-rovinka.jpeg",
   },
@@ -149,7 +147,6 @@ export const categories = [
     tagline: "Posuvné systémy · Bezrámové sklo",
     description:
       "Premena otvorenej terasy na chránený priestor počas chladnejších mesiacov. Plne posuvné, otvorené v lete, uzavreté v zime.",
-    priceFrom: "3 290 €",
     image:
       "/images/zimna-zahrada-horne-janiky.jpeg",
   },
@@ -164,11 +161,16 @@ export const process = [
   { n: "05", title: "Montáž", meta: "Na kľúč", description: "Postavíme a odovzdáme." },
 ];
 
+// Číslo je vždy prvé — pás ho zobrazuje veľké a odpočítava od nuly,
+// popis pod ním musí na číslo nadväzovať.
+// Poradie sleduje to, čo zákazníka pri rozhodovaní zaujíma najviac:
+// koľko toho postavíme → akú istotu dostane → kam všade chodíme →
+// ako rýchlo sa ozveme. Posledný údaj vedie priamo k dopytu.
 export const stats = [
-  { value: "250+", label: "Realizácií" },
-  { value: "25+", label: "Zamestnancov" },
+  { value: "250+", label: "Realizácií ročne" },
   { value: "5+", label: "Rokov záruka" },
-  { value: "24h", label: "Cenová ponuka" },
+  { value: "5", label: "Krajín pôsobenia" },
+  { value: "24h", label: "Do odoslania cenovej ponuky" },
 ];
 
 // `match` = cesty, pri ktorých sa položka označí ako aktívna (prefixová zhoda).

@@ -23,7 +23,6 @@ export default function PristreskyNaAutoPage() {
           "Hliníkové alebo drevené konštrukcie chrániace auto pred slnkom, snehom a krupobitím. Jedno alebo dvojstojiskové prevedenia s integrovaným odvodnením.",
         image:
           "/images/IMG_5562.jpg",
-        priceFrom: "3 490 €",
       }}
       intro={{
         title: "Pevnosť pre slovenské počasie",
@@ -42,7 +41,6 @@ export default function PristreskyNaAutoPage() {
       ]}
       realizationFilter={(c) => c.toLowerCase().includes("prístrešok") || c.toLowerCase().includes("carport")}
       stickyName="Prístrešok na auto"
-      stickyPriceFrom="3 490 €"
     />
   );
 }

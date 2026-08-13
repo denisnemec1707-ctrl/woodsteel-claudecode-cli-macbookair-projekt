@@ -20,17 +20,15 @@ interface Props {
     title: React.ReactNode;
     subtitle: string;
     image: string;
-    priceFrom?: string;
   };
   intro: { title: string; body: string };
   features: string[];
   realizationFilter: (cat: string) => boolean;
   faqs?: FaqItem[];
   stickyName: string;
-  stickyPriceFrom?: string;
 }
 
-export function ProductSubpage({ breadcrumb, hero, intro, features, realizationFilter, faqs, stickyName, stickyPriceFrom }: Props) {
+export function ProductSubpage({ breadcrumb, hero, intro, features, realizationFilter, faqs, stickyName }: Props) {
   const projects = realizations.filter((r) => realizationFilter(r.category));
 
   return (
@@ -49,12 +47,6 @@ export function ProductSubpage({ breadcrumb, hero, intro, features, realizationF
               <span className="text-white">{hero.eyebrow}</span>
             </div>
             <h1 className="text-display-1 font-extrabold text-white max-w-3xl">{hero.title}</h1>
-            {hero.priceFrom && (
-              <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/12 backdrop-blur-md border border-gold/40 text-cream text-sm">
-                <span className="font-display font-bold text-gold">od {hero.priceFrom}</span>
-                <span>s DPH</span>
-              </div>
-            )}
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">{hero.subtitle}</p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
               <Link href="/akcna-cenova-ponuka" className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-gold hover:bg-gold-hover text-brown hover:text-white font-semibold rounded-full transition-all shadow-[0_8px_24px_rgba(203,171,88,0.4)] hover:-translate-y-0.5">
@@ -114,7 +106,7 @@ export function ProductSubpage({ breadcrumb, hero, intro, features, realizationF
       </main>
       <Footer />
       <WhatsAppButton />
-      <ProductStickyCTA productName={stickyName} priceFrom={stickyPriceFrom} />
+      <ProductStickyCTA productName={stickyName} />
     </>
   );
 }

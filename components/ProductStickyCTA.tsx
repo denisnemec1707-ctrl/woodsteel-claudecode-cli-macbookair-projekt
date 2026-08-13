@@ -7,10 +7,9 @@ import { cn } from "@/lib/utils";
 
 interface Props {
   productName: string;
-  priceFrom?: string;
 }
 
-export function ProductStickyCTA({ productName, priceFrom }: Props) {
+export function ProductStickyCTA({ productName }: Props) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -33,9 +32,6 @@ export function ProductStickyCTA({ productName, priceFrom }: Props) {
           <div className="font-display font-bold text-brown text-sm truncate">
             {productName}
           </div>
-          {priceFrom && (
-            <div className="text-xs text-gold font-semibold mt-0.5">od {priceFrom}</div>
-          )}
         </div>
         <Link
           href="/akcna-cenova-ponuka"

@@ -24,7 +24,6 @@ export default function DrevenePergolyPage() {
           "Lepené BSH drevo s tvarovou stálosťou, voliteľná príprava na neskoršie zasklenie. Vhodné pre tradičné aj moderné fasády.",
         image:
           "/images/drevena-pergola.jpg",
-        priceFrom: "4 990 €",
       }}
       intro={{
         title: "BSH drevo — pevnosť a estetika",
@@ -44,7 +43,6 @@ export default function DrevenePergolyPage() {
       realizationFilter={(c) => c.toLowerCase().includes("drevená pergola") || c.toLowerCase().includes("pergola")}
       faqs={pergolaFaqs.slice(0, 5)}
       stickyName="Drevená pergola"
-      stickyPriceFrom="4 990 €"
     />
   );
 }

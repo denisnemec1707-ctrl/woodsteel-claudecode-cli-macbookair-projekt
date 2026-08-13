@@ -24,7 +24,6 @@ export default function HlinikoveZimneZahradyPage() {
           "Štíhle profily (od 50 mm), izolačné dvojsklo, bezúdržbová konštrukcia s desaťročiami životnosti. Veľké presklené plochy + kvalitné tesnenie pre celoročné používanie.",
         image:
           "/images/zimna-zahrada-hamuliakovo.jpeg",
-        priceFrom: "12 990 €",
       }}
       intro={{
         title: "Štíhle profily, maximálne sklo",
@@ -44,7 +43,6 @@ export default function HlinikoveZimneZahradyPage() {
       realizationFilter={(c) => c.toLowerCase().includes("hliníková zimná") || c.toLowerCase().includes("zimná")}
       faqs={zimnaZahradaFaqs.slice(0, 5)}
       stickyName="Hliníková zimná záhrada"
-      stickyPriceFrom="12 990 €"
     />
   );
 }

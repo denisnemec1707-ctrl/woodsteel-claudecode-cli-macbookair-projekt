@@ -24,7 +24,6 @@ export default function DreveneZimneZahradyPage() {
           "Lepené BSH drevo dodáva priestoru teplo a charakter klasiky. Konštrukcia z tvarovo stálych profilov, garantovaná dlhá životnosť.",
         image:
           "/images/drevena-zimna-zahrada5.jpg",
-        priceFrom: "14 990 €",
       }}
       intro={{
         title: "Drevo ako obytný materiál",
@@ -44,7 +43,6 @@ export default function DreveneZimneZahradyPage() {
       realizationFilter={(c) => c.toLowerCase().includes("drevená zimná") || c.toLowerCase().includes("zimná")}
       faqs={zimnaZahradaFaqs.slice(0, 5)}
       stickyName="Drevená zimná záhrada"
-      stickyPriceFrom="14 990 €"
     />
   );
 }

@@ -66,7 +66,6 @@ export default function PergolyPage() {
             "Hliníkové bioklimatické, klasické drevené alebo prístrešky na auto. Vlastná SK výroba s 5+ rokmi záruka.",
           image:
             "/images/hlinikova-pergola-trencin.jpeg",
-          priceFrom: "4990",
           category: "Pergoly",
         })}
       />
@@ -94,10 +93,6 @@ export default function PergolyPage() {
               Pergoly na mieru, ktoré <span className="text-gold">prežijú generácie.</span>
             </h1>
             {/* Price badge */}
-            <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/12 backdrop-blur-md border border-gold/40 text-cream text-sm">
-              <span className="font-display font-bold text-gold">od 4 990 €</span>
-              <span>s DPH</span>
-            </div>
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">
               Hliníkové bioklimatické, klasické drevené alebo prístrešky na auto.
               Každú pergolu navrhujeme presne pre váš dom — od merania až po finálnu montáž.
@@ -235,7 +230,7 @@ export default function PergolyPage() {
       </main>
       <Footer />
       <WhatsAppButton />
-      <ProductStickyCTA productName="Pergola" priceFrom="4 990 €" />
+      <ProductStickyCTA productName="Pergola" />
     </>
   );
 }
