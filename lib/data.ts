@@ -81,7 +81,7 @@ export const realizations = [
   },
   {
     location: "Horné Janíky",
-    category: "Zimná záhrada",
+    category: "Hliníková pergola",
     image:
       "/images/zimna-zahrada-horne-janiky-1.jpeg",
   },
