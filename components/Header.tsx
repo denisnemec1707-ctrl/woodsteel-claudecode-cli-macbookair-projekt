@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, X, ChevronDown } from "lucide-react";
+import { Menu, Phone, X, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigation } from "@/lib/data";
 
@@ -160,12 +160,32 @@ export function Header({ overlay = false }: HeaderProps) {
             <Phone size={16} />
             +421 904 473 111
           </a>
-          <Link
-            href="#contact"
-            className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 bg-gold hover:bg-gold-hover text-brown hover:text-white text-sm font-semibold rounded-full transition-all shadow-[0_4px_16px_rgba(203,171,88,0.4)] hover:shadow-[0_8px_24px_rgba(203,171,88,0.55)] hover:-translate-y-0.5"
-          >
-            Cenová ponuka
-          </Link>
+          {/* Trvalo zvýraznené CTA — viditeľné na každej šírke aj v oboch stavoch lišty */}
+          <span className="relative inline-flex shrink-0">
+            {/* Prstenec, ktorý sa ticho rozpína — udržuje tlačidlo na očiach */}
+            <span
+              aria-hidden
+              className="ws-cta-halo pointer-events-none absolute inset-0 rounded-full ring-2 ring-gold"
+            />
+            <Link
+              href="#contact"
+              className={cn(
+                "ws-cta group relative inline-flex items-center gap-2 rounded-full",
+                "px-4 sm:px-6 py-2.5 sm:py-3",
+                "bg-gradient-to-br from-gold via-gold to-gold-hover",
+                "text-brown text-xs sm:text-sm font-bold tracking-[0.01em]",
+                "ring-1 ring-white/40 hover:ring-white/70",
+                "transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.04]"
+              )}
+            >
+              <span className="hidden sm:inline">Cenová ponuka</span>
+              <span className="sm:hidden">Ponuka</span>
+              <ArrowRight
+                size={15}
+                className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </span>
           <button
             onClick={() => setOpen(!open)}
             className={cn(

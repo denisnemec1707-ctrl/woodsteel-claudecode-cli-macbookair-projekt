@@ -6,7 +6,6 @@ import { Footer } from "@/components/Footer";
 import { Process } from "@/components/Process";
 import { Reviews } from "@/components/Reviews";
 import { FinalCTA } from "@/components/FinalCTA";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Faq } from "@/components/Faq";
 import { ProductStickyCTA } from "@/components/ProductStickyCTA";
@@ -107,7 +106,6 @@ export default function ZasklenieTerasPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <FloatingCTA />
     </>
   );
 }

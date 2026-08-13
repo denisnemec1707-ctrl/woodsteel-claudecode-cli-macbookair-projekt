@@ -159,12 +159,13 @@ export const categories = [
   },
 ];
 
+// `meta` = krátky časový alebo vecný údaj ku kroku
 export const process = [
-  { n: "01", title: "Dopyt", description: "Vyplníte formulár alebo zavoláte. Reagujeme do hodiny." },
-  { n: "02", title: "Obhliadka", description: "Bezplatne prídeme k vám, zameriame priestor a poradíme." },
-  { n: "03", title: "Cenová ponuka", description: "Do 24-48 hodín máte na maile ponuku spolu s vizualizáciou." },
-  { n: "04", title: "Výroba", description: "Vyrábame vo vlastnej dielni na Slovensku. Bez subdodávateľov." },
-  { n: "05", title: "Montáž", description: "Náš tím postaví dielo u vás na kľúč. Odovzdanie do týždňa." },
+  { n: "01", title: "Dopyt", meta: "Do hodiny", description: "Zavoláte alebo napíšete." },
+  { n: "02", title: "Obhliadka", meta: "Bezplatne", description: "Prídeme zamerať priestor." },
+  { n: "03", title: "Cenová ponuka", meta: "Do 48 hodín", description: "Ponuka aj s vizualizáciou." },
+  { n: "04", title: "Výroba", meta: "Vlastná dielňa", description: "Vyrábame na Slovensku." },
+  { n: "05", title: "Montáž", meta: "Na kľúč", description: "Postavíme a odovzdáme." },
 ];
 
 export const stats = [

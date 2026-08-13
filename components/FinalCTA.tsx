@@ -14,7 +14,7 @@ export function FinalCTA() {
               Pripravený začať?
             </div>
             <h2 className="text-display-2 font-bold text-brown">
-              Premeňme vašu terasu spolu.
+              Vytvoríme terasu podľa vašich predstáv.
             </h2>
             <p className="mt-5 text-mutedbrand text-base lg:text-lg leading-relaxed max-w-xl">
               Bezplatná obhliadka u vás doma + cenová ponuka do&nbsp;24-48&nbsp;hodín.

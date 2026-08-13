@@ -3,7 +3,6 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { InquiryForm } from "@/components/InquiryForm";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MapEmbed } from "@/components/MapEmbed";
 
@@ -20,7 +19,7 @@ export default function KontaktPage() {
               <span className="text-mutedbrand">Kontakt</span>
             </div>
             <h1 className="text-display-1 font-extrabold text-brown">
-              Spojme sa.
+              Začnime Váš projekt.
             </h1>
             <p className="mt-5 text-mutedbrand text-base lg:text-lg max-w-2xl mx-auto">
               Vyplňte formulár, zavolajte alebo si dohodnite osobné stretnutie v
@@ -116,7 +115,6 @@ export default function KontaktPage() {
         </section>
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
     </>
   );

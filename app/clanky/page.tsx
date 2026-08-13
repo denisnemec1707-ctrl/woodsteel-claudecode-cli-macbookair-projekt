@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { blogPosts, formatDate } from "@/lib/blog";
 
@@ -99,7 +98,6 @@ export default function ClankyPage() {
         </section>
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
     </>
   );

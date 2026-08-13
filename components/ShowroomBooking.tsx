@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarCheck, Phone, Mail, ChevronDown, MapPin, Clock } from "lucide-react";
+import { CalendarCheck, Phone, Mail, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { InquiryForm } from "@/components/InquiryForm";
 
@@ -103,18 +103,6 @@ export function ShowroomBooking() {
                 </span>
               </span>
             </a>
-          </div>
-
-          {/* Doplnkové info */}
-          <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-mutedbrand">
-            <span className="inline-flex items-center gap-2">
-              <MapPin size={16} className="text-gold" />
-              Rovinka, okres Senec
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Clock size={16} className="text-gold" />
-              Po–Pi 8:00 – 17:00 · sobota po dohode
-            </span>
           </div>
 
           {/* Rozbaliteľný formulár */}

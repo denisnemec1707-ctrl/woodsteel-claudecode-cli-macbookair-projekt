@@ -67,4 +67,184 @@
   .stagger > *:nth-child(4) { animation-delay: 240ms; }
   .stagger > *:nth-child(5) { animation-delay: 320ms; }
   .stagger > *:nth-child(6) { animation-delay: 400ms; }
+
+  /* Modálne okno */
+  .ws-fade-in { animation: ws-fade 0.25s ease-out; }
+  @keyframes ws-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .ws-dialog-in { animation: ws-dialog 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  @keyframes ws-dialog {
+    from { transform: translateY(16px) scale(0.98); }
+    to   { transform: translateY(0) scale(1); }
+  }
+
+  /* Odhalenie pri scrollovaní — aktivuje komponent Reveal */
+  .ws-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .ws-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  /* Bez JavaScriptu sa obsah nesmie skryť */
+  @media (scripting: none) {
+    .ws-reveal { opacity: 1; transform: none; }
+  }
+
+  /* Trvalo zvýraznené CTA v hlavičke — jemné dýchanie svetla a občasný prelesk */
+  .ws-cta {
+    position: relative;
+    overflow: hidden;
+    animation: ws-cta-glow 3.4s ease-in-out infinite;
+  }
+  @keyframes ws-cta-glow {
+    0%, 100% { box-shadow: 0 4px 18px rgba(203, 171, 88, 0.55); }
+    50%      { box-shadow: 0 8px 34px rgba(203, 171, 88, 0.95); }
+  }
+  /* Prstenec, ktorý sa z tlačidla ticho rozpína */
+  .ws-cta-halo { animation: ws-cta-halo 2.8s ease-out infinite; }
+  @keyframes ws-cta-halo {
+    0%   { opacity: 0.55; transform: scale(1); }
+    70%  { opacity: 0; transform: scale(1.28); }
+    100% { opacity: 0; transform: scale(1.28); }
+  }
+  .ws-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 65%
+    );
+    transform: translateX(-130%);
+    animation: ws-cta-sheen 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes ws-cta-sheen {
+    0%, 55% { transform: translateX(-130%); }
+    85%     { transform: translateX(130%); }
+    100%    { transform: translateX(130%); }
+  }
+
+  /* Pomaly plávajúce svetlo v pásoch so štatistikami */
+  .ws-drift { animation: ws-drift 22s ease-in-out infinite alternate; }
+  @keyframes ws-drift {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to   { transform: translate3d(40px, -24px, 0) scale(1.12); }
+  }
+  .ws-drift-slow { animation: ws-drift-slow 28s ease-in-out infinite alternate; }
+  @keyframes ws-drift-slow {
+    from { transform: translate3d(0, 0, 0) scale(1.08); }
+    to   { transform: translate3d(-36px, 20px, 0) scale(1); }
+  }
+
+  /* Lesk, ktorý raz za čas prejde cez pás */
+  .ws-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 40%,
+      rgba(203, 171, 88, 0.10) 50%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    animation: ws-sweep 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes ws-sweep {
+    0%, 70% { transform: translateX(-100%); }
+    100%    { transform: translateX(100%); }
+  }
+
+  /* Potvrdenie po odoslaní formulára */
+  .ws-pop { animation: ws-pop 0.55s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes ws-pop {
+    0%   { transform: scale(0.6); }
+    60%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+  .ws-ring { animation: ws-ring 2s ease-out infinite; }
+  .ws-ring-delayed { animation: ws-ring 2s ease-out 0.6s infinite; }
+  @keyframes ws-ring {
+    0%   { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.8); }
+  }
+  .ws-rise { animation: ws-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes ws-rise {
+    from { transform: translateY(14px); }
+    to   { transform: translateY(0); }
+  }
+
+  /* Príchod uvítacieho banneru na stred obrazovky */
+  .ws-banner-in { animation: ws-banner-in 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes ws-banner-in {
+    0%   { transform: translateY(26px) scale(0.9); }
+    60%  { transform: translateY(0) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+
+  /* Nástup obsahu zľava — nadväzuje na odsun predchádzajúceho kroku doprava */
+  .ws-slide-in { animation: ws-slide-in 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes ws-slide-in {
+    from { transform: translateX(-28px); }
+    to   { transform: translateX(0); }
+  }
+
+  /* Svetlo putujúce po hrane pásu */
+  .ws-trace { animation: ws-trace 8s linear infinite; }
+  @keyframes ws-trace {
+    0%   { left: -25%; opacity: 0; }
+    12%  { opacity: 1; }
+    88%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+
+  /* Pomalé priblíženie fotky — použité na vizuáloch showroomu */
+  .ws-kenburns { animation: ws-kenburns 18s ease-in-out infinite alternate both; }
+  @keyframes ws-kenburns {
+    from { transform: scale(1); }
+    to   { transform: scale(1.07); }
+  }
+}
+
+/* Používatelia s obmedzeným pohybom dostanú obsah bez animácií */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .stagger > *,
+  .ws-fade-in,
+  .ws-dialog-in,
+  .ws-kenburns,
+  .ws-cta,
+  .ws-cta::after,
+  .ws-cta-halo,
+  .ws-drift,
+  .ws-drift-slow,
+  .ws-sweep::before,
+  .ws-trace,
+  .ws-ring,
+  .ws-ring-delayed {
+    animation: none !important;
+  }
+  .ws-slide-in,
+  .ws-pop,
+  .ws-rise,
+  .ws-banner-in {
+    animation-duration: 0.01ms !important;
+  }
+  .ws-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html { scroll-behavior: auto; }
 }

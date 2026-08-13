@@ -22,18 +22,19 @@ export function Hero() {
           <div className="reveal">
             <span className="text-eyebrow text-gold inline-flex items-center gap-2">
               <span className="w-8 h-px bg-gold" />
-              Premium konštrukcie od 2008
+              Konštrukcie na mieru od roku 2008
             </span>
           </div>
 
-          <h1 className="text-display-1 font-extrabold text-white mt-4 sm:mt-6 reveal" style={{ animationDelay: "100ms" }}>
-            Outdoor priestor,<br className="hidden sm:inline" />
-            <span className="text-gold">ktorý milujete</span> celý rok.
+          <h1 className="text-display-2 font-extrabold text-white mt-4 sm:mt-6 max-w-2xl reveal" style={{ animationDelay: "100ms" }}>
+            Keď sa komfort stretáva<br className="hidden sm:inline" />{" "}
+            <span className="text-gold">s vonkajším priestorom.</span>
           </h1>
 
           <p className="text-base sm:text-lg lg:text-xl text-cream/90 mt-5 sm:mt-6 max-w-2xl leading-relaxed reveal" style={{ animationDelay: "200ms" }}>
-            Pergoly, zimné záhrady a zasklenia terás na mieru.
-            Vyrobené a postavené naším tímom — od merania až po finálne odovzdanie.
+            Pergoly, zimné záhrady, zasklenia terás aj prístrešky na auto — na
+            mieru. Navrhujeme a staviame ich vlastným tímom, od prvého merania
+            až po odovzdanie hotového priestoru.
           </p>
 
           <div className="mt-6 sm:mt-7 reveal" style={{ animationDelay: "260ms" }}>

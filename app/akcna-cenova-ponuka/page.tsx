@@ -3,7 +3,6 @@ import { Phone, Zap, Clock, Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { InquiryForm } from "@/components/InquiryForm";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const promises = [
@@ -93,7 +92,6 @@ export default function CenovaPonukaPage() {
         </section>
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
     </>
   );

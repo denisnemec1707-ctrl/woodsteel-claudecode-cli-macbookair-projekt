@@ -3,10 +3,13 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SectionHeader } from "@/components/SectionHeader";
-import { team, stats } from "@/lib/data";
+import { Team } from "@/components/Team";
+import { CounterStat } from "@/components/CounterStat";
+import { Reveal } from "@/components/Reveal";
+import { cn } from "@/lib/utils";
+import { stats } from "@/lib/data";
 
 const values = [
   {
@@ -53,7 +56,7 @@ export default function ONasPage() {
               <span className="text-white">O nás</span>
             </div>
             <h1 className="text-display-1 font-extrabold text-white max-w-3xl">
-              Slovenská firma, ktorá <span className="text-gold">tvorí outdoor priestor</span>.
+              Dávame priestoru <span className="text-gold">nový rozmer</span>.
             </h1>
           </div>
         </section>
@@ -82,14 +85,51 @@ export default function ONasPage() {
         </section>
 
         {/* Stats */}
-        <section className="py-16 bg-gradient-to-br from-brown via-brown to-wood">
-          <div className="max-w-7xl mx-auto px-5 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <div className="font-display font-extrabold text-4xl lg:text-6xl text-gold leading-none">{s.value}</div>
-                  <div className="mt-2 text-eyebrow text-cream/85">{s.label}</div>
-                </div>
+        <section className="ws-sweep relative py-16 sm:py-20 overflow-hidden bg-gradient-to-br from-brown via-brown to-wood">
+          {/* Pomaly plávajúce zlaté svetlo */}
+          <div
+            aria-hidden
+            className="ws-drift pointer-events-none absolute -top-28 left-[15%] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(203,171,88,0.20),transparent_70%)] blur-3xl"
+          />
+          <div
+            aria-hidden
+            className="ws-drift-slow pointer-events-none absolute -bottom-36 right-[12%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(203,171,88,0.13),transparent_70%)] blur-3xl"
+          />
+          {/* Vlasové zlaté linky na hranách pásu */}
+          <span
+            aria-hidden
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent"
+          />
+          <span
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent"
+          />
+          {/* Svetlo, ktoré neustále putuje po hornej hrane */}
+          <span
+            aria-hidden
+            className="ws-trace pointer-events-none absolute top-0 h-px w-[25%] bg-gradient-to-r from-transparent via-gold to-transparent shadow-[0_0_10px_rgba(203,171,88,0.8)]"
+          />
+
+          <div className="relative max-w-7xl mx-auto px-5 lg:px-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4">
+              {stats.map((s, i) => (
+                <Reveal key={s.label} delay={i * 110}>
+                  <div
+                    className={cn(
+                      "group relative transition-transform duration-500 hover:-translate-y-1.5",
+                      i % 2 === 1 && "border-l border-cream/10",
+                      i === 2 && "lg:border-l lg:border-cream/10",
+                      i >= 2 && "border-t border-cream/10 lg:border-t-0"
+                    )}
+                  >
+                    <CounterStat value={s.value} label={s.label} invert />
+                    {/* Zlatá linka, ktorá sa pri prejdení myšou roztiahne */}
+                    <span
+                      aria-hidden
+                      className="absolute bottom-3 left-1/2 h-px w-8 -translate-x-1/2 bg-gold/30 transition-all duration-500 ease-out group-hover:w-16 group-hover:bg-gold group-hover:shadow-[0_0_10px_rgba(203,171,88,0.7)]"
+                    />
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -110,29 +150,12 @@ export default function ONasPage() {
           </div>
         </section>
 
-        {/* Team */}
-        <section id="team" className="py-24 lg:py-32 bg-white">
-          <div className="max-w-7xl mx-auto px-5 lg:px-8">
-            <SectionHeader eyebrow="Náš tím" title="Ľudia, ktorí stoja za vašou stavbou" subtitle="25+ zamestnancov, vlastná výroba aj montáž. Tím, ktorý sa vám venuje od prvého dopytu až po odovzdanie kľúčov." />
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {team.map((m) => (
-                <article key={m.name} className="bg-white rounded-2xl p-7 text-center shadow-[0_4px_24px_rgba(63,34,17,0.05)] border border-cream hover:shadow-[0_16px_40px_rgba(63,34,17,0.1)] hover:-translate-y-1 transition-all">
-                  <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden bg-cream ring-4 ring-cream">
-                    <Image src={m.photo} alt={m.name} fill sizes="160px" className="object-cover" />
-                  </div>
-                  <h3 className="mt-5 font-display font-bold text-lg text-brown">{m.name}</h3>
-                  <div className="text-eyebrow text-gold mt-1">{m.role}</div>
-                  <p className="mt-4 text-sm italic text-mutedbrand leading-relaxed">„{m.quote}"</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Team — zdieľaný komponent */}
+        <Team bgClass="bg-white" />
 
         <FinalCTA />
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
     </>
   );

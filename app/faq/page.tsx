@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Faq } from "@/components/Faq";
 import { FinalCTA } from "@/components/FinalCTA";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { generalFaqs, pergolaFaqs, zimnaZahradaFaqs, zasklenieFaqs } from "@/lib/faqs";
 import { JsonLd, faqSchema } from "@/lib/schema";
@@ -38,18 +37,13 @@ export default function FaqPage() {
         </section>
 
         <Faq items={generalFaqs} eyebrow="Všeobecné" title="Všeobecné otázky" />
-        <div className="bg-cream/30">
-          <Faq items={pergolaFaqs.slice(0, 4)} eyebrow="Pergoly" title="Otázky o pergolách" />
-        </div>
+        <Faq items={pergolaFaqs.slice(0, 4)} eyebrow="Pergoly" title="Otázky o pergolách" />
         <Faq items={zimnaZahradaFaqs.slice(0, 4)} eyebrow="Zimné záhrady" title="Otázky o zimných záhradách" />
-        <div className="bg-cream/30">
-          <Faq items={zasklenieFaqs.slice(0, 3)} eyebrow="Zasklenia" title="Otázky o zasklení terás" />
-        </div>
+        <Faq items={zasklenieFaqs.slice(0, 3)} eyebrow="Zasklenia" title="Otázky o zasklení terás" />
 
         <FinalCTA />
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
     </>
   );

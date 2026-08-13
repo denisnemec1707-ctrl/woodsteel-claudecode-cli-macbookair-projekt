@@ -10,7 +10,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Faq } from "@/components/Faq";
 import { ProductStickyCTA } from "@/components/ProductStickyCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { realizations } from "@/lib/data";
 import { pergolaFaqs } from "@/lib/faqs";
 import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
@@ -235,7 +234,6 @@ export default function PergolyPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
       <ProductStickyCTA productName="Pergola" priceFrom="4 990 €" />
     </>

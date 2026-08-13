@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FileText, Download, Archive } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CatalogDownload } from "@/components/CatalogDownload";
 
@@ -102,7 +101,6 @@ export default function NaStiahnutiePage() {
         <CatalogDownload />
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
     </>
   );

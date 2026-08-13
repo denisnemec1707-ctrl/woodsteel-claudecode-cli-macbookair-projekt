@@ -6,7 +6,6 @@ import { Footer } from "@/components/Footer";
 import { Process } from "@/components/Process";
 import { Reviews } from "@/components/Reviews";
 import { FinalCTA } from "@/components/FinalCTA";
-import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Faq } from "@/components/Faq";
 import { ProductStickyCTA } from "@/components/ProductStickyCTA";
@@ -114,7 +113,6 @@ export function ProductSubpage({ breadcrumb, hero, intro, features, realizationF
         <FinalCTA />
       </main>
       <Footer />
-      <FloatingCTA />
       <WhatsAppButton />
       <ProductStickyCTA productName={stickyName} priceFrom={stickyPriceFrom} />
     </>
