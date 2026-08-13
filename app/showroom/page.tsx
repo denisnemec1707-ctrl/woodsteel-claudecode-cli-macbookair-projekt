@@ -114,7 +114,7 @@ export default function ShowroomPage() {
             aria-hidden
             className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-white/60"
           >
-            <span className="text-eyebrow text-[0.6rem]">Prezrite si priestor</span>
+            <span className="text-eyebrow text-[0.7rem]">Prezrite si priestor</span>
             <ArrowDown size={16} className="animate-bounce [animation-duration:2.5s]" />
           </span>
         </section>

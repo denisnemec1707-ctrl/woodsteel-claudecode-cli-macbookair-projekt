@@ -72,7 +72,7 @@ export function CounterStat({ value, label, invert = false }: Props) {
         {displayValue}
       </div>
       <div
-        className={`mt-1.5 sm:mt-2 text-[10px] sm:text-eyebrow tracking-[0.15em] sm:tracking-[0.18em] uppercase font-semibold transition-colors duration-500 ${
+        className={`mt-1.5 sm:mt-2 text-[11px] sm:text-eyebrow tracking-[0.15em] sm:tracking-[0.18em] uppercase font-semibold transition-colors duration-500 ${
           invert ? "text-cream/85 group-hover:text-white" : "text-mutedbrand group-hover:text-brown"
         }`}
       >

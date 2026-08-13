@@ -80,13 +80,13 @@ export function Footer() {
             <h4 className="text-eyebrow text-gold mb-5">Kontakt</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="tel:+421904473111" className="inline-flex items-center gap-2 hover:text-gold transition-colors">
+                <a href="tel:+421904473111" className="inline-flex items-center gap-2 py-2 hover:text-gold transition-colors">
                   <Phone size={14} className="text-gold" />
                   +421 904 473 111
                 </a>
               </li>
               <li>
-                <a href="mailto:info@woodsteel.sk" className="inline-flex items-center gap-2 hover:text-gold transition-colors">
+                <a href="mailto:info@woodsteel.sk" className="inline-flex items-center gap-2 py-2 hover:text-gold transition-colors">
                   <Mail size={14} className="text-gold" />
                   info@woodsteel.sk
                 </a>
@@ -102,10 +102,10 @@ export function Footer() {
         <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-cream/55">
           <div>© {new Date().getFullYear()} WoodSteel.sk. Všetky práva vyhradené.</div>
           <div className="flex gap-6">
-            <Link href="/ochrana-osobnych-udajov" className="hover:text-gold transition-colors">Ochrana osobných údajov</Link>
-            <Link href="/cookies" className="hover:text-gold transition-colors">Cookies</Link>
+            <Link href="/ochrana-osobnych-udajov" className="inline-block py-2 hover:text-gold transition-colors">Ochrana osobných údajov</Link>
+            <Link href="/cookies" className="inline-block py-2 hover:text-gold transition-colors">Cookies</Link>
           </div>
-          <div className="font-mono text-[10px] tracking-wider px-2.5 py-1 rounded-md bg-white/8 text-gold/80">
+          <div className="font-mono text-[11px] tracking-wider px-2.5 py-1 rounded-md bg-white/8 text-gold/80">
             build: claude-code · v1
           </div>
         </div>

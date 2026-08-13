@@ -157,11 +157,11 @@ export function CatalogDownload() {
                     </button>
                   </div>
 
-                  <label className="mt-4 flex items-start gap-2.5 text-[0.7rem] leading-relaxed text-cream/65 cursor-pointer">
+                  <label className="mt-4 flex items-start gap-2.5 py-2 text-[0.7rem] leading-relaxed text-cream/65 cursor-pointer">
                     <input
                       type="checkbox"
                       required
-                      className="mt-0.5 accent-[#cbab58]"
+                      className="mt-0.5 h-[18px] w-[18px] shrink-0 accent-[#cbab58]"
                     />
                     <span>
                       Súhlasím so zaslaním katalógu na uvedený e-mail.

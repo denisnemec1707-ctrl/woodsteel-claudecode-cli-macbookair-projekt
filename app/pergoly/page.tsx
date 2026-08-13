@@ -156,7 +156,7 @@ export default function PergolyPage() {
                     </p>
                     <Link
                       href="#contact"
-                      className="mt-8 inline-flex items-center gap-2 text-gold font-semibold text-sm hover:gap-3 transition-all"
+                      className="mt-8 inline-flex items-center gap-2 py-2 text-gold font-semibold text-sm hover:gap-3 transition-all"
                     >
                       Vyžiadať ponuku
                       <ArrowRight size={16} />

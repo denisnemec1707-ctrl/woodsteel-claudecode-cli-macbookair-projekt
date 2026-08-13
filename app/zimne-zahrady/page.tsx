@@ -122,7 +122,7 @@ export default function ZimneZahradyPage() {
                     <div className="text-eyebrow text-gold">{v.tag}</div>
                     <h3 className="mt-3 text-display-3 font-bold text-brown">{v.name}</h3>
                     <p className="mt-5 text-mutedbrand leading-relaxed">{v.description}</p>
-                    <Link href="/akcna-cenova-ponuka" className="mt-8 inline-flex items-center gap-2 text-gold font-semibold text-sm hover:gap-3 transition-all">
+                    <Link href="/akcna-cenova-ponuka" className="mt-8 inline-flex items-center gap-2 py-2 text-gold font-semibold text-sm hover:gap-3 transition-all">
                       Vyžiadať ponuku <ArrowRight size={16} />
                     </Link>
                   </div>

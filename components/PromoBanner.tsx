@@ -130,7 +130,7 @@ export function PromoBanner() {
               />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
             </span>
-            <span className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-brown/70">
+            <span className="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-brown/70">
               Časovo obmedzená ponuka
             </span>
           </span>
@@ -162,7 +162,7 @@ export function PromoBanner() {
                 <span className="font-display text-[1.35rem] font-extrabold leading-none text-brown tabular-nums">
                   {String(value).padStart(2, "0")}
                 </span>
-                <span className="mt-1.5 text-[0.5rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand">
+                <span className="mt-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand">
                   {unit}
                 </span>
               </div>

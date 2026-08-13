@@ -29,7 +29,7 @@ export function ProductStickyCTA({ productName, priceFrom }: Props) {
     >
       <div className="bg-white border-t border-cream shadow-[0_-8px_24px_rgba(63,34,17,0.08)] px-4 py-3 flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <div className="text-[10px] text-eyebrow text-mutedbrand">Cenová ponuka pre</div>
+          <div className="text-[11px] text-eyebrow text-mutedbrand">Cenová ponuka pre</div>
           <div className="font-display font-bold text-brown text-sm truncate">
             {productName}
           </div>

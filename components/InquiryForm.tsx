@@ -189,7 +189,7 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
             />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
           </span>
-          <span className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-brown/70">
+          <span className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-brown/70">
             Odpovedáme dnes
           </span>
         </span>
@@ -197,7 +197,7 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
 
       {/* Výber produktu */}
       <div className="mt-9">
-        <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand mb-3">
+        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand mb-3">
           O aký produkt máte záujem?
         </span>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -372,8 +372,8 @@ function Field({
         className={cn(
           "pointer-events-none absolute left-0 top-5 text-sm text-mutedbrand",
           "transition-all duration-200 ease-out",
-          "peer-focus:top-0 peer-focus:text-[0.65rem] peer-focus:tracking-[0.1em] peer-focus:text-gold",
-          "peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[0.65rem] peer-[:not(:placeholder-shown)]:tracking-[0.1em]"
+          "peer-focus:top-0 peer-focus:text-[0.7rem] peer-focus:tracking-[0.1em] peer-focus:text-gold",
+          "peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[0.7rem] peer-[:not(:placeholder-shown)]:tracking-[0.1em]"
         )}
       >
         {label}
@@ -419,8 +419,8 @@ function TextareaField({
         className={cn(
           "pointer-events-none absolute left-0 top-5 text-sm text-mutedbrand",
           "transition-all duration-200 ease-out",
-          "peer-focus:top-0 peer-focus:text-[0.65rem] peer-focus:tracking-[0.1em] peer-focus:text-gold",
-          "peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[0.65rem] peer-[:not(:placeholder-shown)]:tracking-[0.1em]"
+          "peer-focus:top-0 peer-focus:text-[0.7rem] peer-focus:tracking-[0.1em] peer-focus:text-gold",
+          "peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[0.7rem] peer-[:not(:placeholder-shown)]:tracking-[0.1em]"
         )}
       >
         {label}

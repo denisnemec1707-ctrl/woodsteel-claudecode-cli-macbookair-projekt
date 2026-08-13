@@ -89,7 +89,7 @@ export default function KontaktPage() {
                   </div>
                   <Link
                     href="/showroom"
-                    className="inline-flex items-center gap-2 text-gold font-semibold text-sm mt-2 hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 py-2 text-gold font-semibold text-sm mt-2 hover:gap-3 transition-all"
                   >
                     Viac o showroome →
                   </Link>

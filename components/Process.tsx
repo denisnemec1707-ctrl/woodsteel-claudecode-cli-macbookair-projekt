@@ -239,7 +239,7 @@ export function Process() {
 
                     <div
                       className={cn(
-                        "text-eyebrow text-[0.62rem] transition-colors duration-500",
+                        "text-eyebrow text-[0.7rem] transition-colors duration-500",
                         lit ? "text-gold" : "text-mutedbrand/60"
                       )}
                     >
