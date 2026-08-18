@@ -16,10 +16,10 @@ import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
 
 const variants = [
   {
-    name: "Bioklimatická hliníková pergola",
+    name: "Hliníková pergola",
     tag: "Hliník",
     description:
-      "Nastaviteľné lamely v streche regulujú slnko aj prúdenie vzduchu. Bezúdržbová konštrukcia, prirodzene odtekajúca voda, voliteľné LED osvetlenie a tienenie po stranách.",
+      "Hliníkové pergoly sú v posledných rokoch obľúbeným a ideálnym riešením pre mnohé záhrady. Sú odolné voči poveternostným vplyvom, ľahké na údržbu a majú moderný vzhľad. Zaručujú dlhodobú životnosť a vytvárajú útulný priestor Vášho exteriéru. Zvoľte eleganciu a trvanlivosť s našimi hliníkovými pergolami.",
     image:
       "/images/hlinikova-pergola-senec.jpeg",
   },
@@ -27,22 +27,21 @@ const variants = [
     name: "Drevená pergola z BSH dreva",
     tag: "Drevo",
     description:
-      "Lepené BSH drevo s tvarovou stálosťou, voliteľná príprava na neskoršie zasklenie. Vhodná pre tradičné aj moderné fasády. Garantovaná dlhá životnosť.",
+      "Drevené pergoly sú nestarnúcou klasikou riešenia pre akúkoľvek záhradu. Svojím tradičným vzhľadom zútulnia každý exteriér. Vynikajú dlhou životnosťou a možnosťou prispôsobenia svojho vzhľadu všetkým potrebám i prianiam nášho zákazníka, čím naplnia všetky Vaše sny. Vytvoria harmonický doplnok každej záhrady!",
     image:
-      "/images/drevena-pergola.jpg",
+      "/images/drevena-pergola-woodsteel.jpg",
   },
   {
     name: "Prístrešok na auto",
     tag: "Carport",
     description:
-      "Pevná hliníková alebo drevená konštrukcia chrániaca auto pred slnkom, snehom a krupobitím. Jedno alebo dvojstojiskové prevedenia s integrovaným odvodnením.",
+      "Naše prístrešky na auto poskytujú spoľahlivú ochranu pred nepriaznivým počasím. Sú ideálnym riešením pre zachovanie Vášho vozidla v optimálnom stave. Ponúkame viacero variant a riešení prístreškov na auto. Pomôžeme Vám vybrať štýlový a funkčný prístrešok, ktorý spoľahlivo ochráni Vaše auto a investície.",
     image:
       "/images/IMG_5562.jpg",
   },
 ];
 
 const features = [
-  "Nastaviteľné lamely (bioklimatické modely)",
   "Príprava na neskoršie zasklenie",
   "Vlastná výroba na Slovensku",
   "5+ rokov záruka",
@@ -63,7 +62,7 @@ export default function PergolyPage() {
         data={productSchema({
           name: "Pergoly WoodSteel",
           description:
-            "Hliníkové bioklimatické, klasické drevené alebo prístrešky na auto. Vlastná SK výroba s 5+ rokmi záruka.",
+            "Hliníkové a drevené pergoly alebo prístrešky na auto. Vlastná SK výroba s 5+ rokmi záruka.",
           image:
             "/images/hlinikova-pergola-trencin.jpeg",
           category: "Pergoly",
@@ -94,7 +93,7 @@ export default function PergolyPage() {
             </h1>
             {/* Price badge */}
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">
-              Hliníkové bioklimatické, klasické drevené alebo prístrešky na auto.
+              Hliníkové a drevené pergoly alebo prístrešky na auto.
               Každú pergolu navrhujeme presne pre váš dom — od merania až po finálnu montáž.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
