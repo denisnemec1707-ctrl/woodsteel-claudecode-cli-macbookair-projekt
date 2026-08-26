@@ -66,12 +66,20 @@ const PRODUCTS = [
   },
 ];
 
+/** Kedy chce mať zákazník hotovo — pomáha nám plánovať výrobu */
+const TIMING = ["Čo najskôr", "Do 3 mesiacov", "Do 6 mesiacov", "Zatiaľ zisťujem"];
+
+/** Záujem o bezplatnú obhliadku */
+const CONSULT = ["Áno, mám záujem", "Zatiaľ nie"];
+
 /** Polia, ktoré tvoria ukazovateľ vyplnenosti */
 const REQUIRED = ["name", "phone", "email"];
 
 export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
   const [product, setProduct] = useState(defaultProduct);
+  const [timing, setTiming] = useState("");
+  const [consult, setConsult] = useState("");
   const [progress, setProgress] = useState(0);
   /** Krátke potvrdenie cez celú obrazovku hneď po odoslaní */
   const [celebrate, setCelebrate] = useState(false);
@@ -258,13 +266,44 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
         </div>
       </div>
 
-      {/* Kontaktné údaje */}
-      <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-7">
-        <Field label="Meno a priezvisko *" name="name" required placeholder="Ján Novák" />
-        <Field label="Telefón *" name="phone" type="tel" required placeholder="+421 901 234 567" />
-        <div className="sm:col-span-2">
-          <Field label="E-mail *" name="email" type="email" required placeholder="vase@meno.sk" />
+      {/* Termín realizácie */}
+      <div className="mt-8">
+        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand mb-3">
+          Kedy by ste chceli mať hotovo?
+        </span>
+        <div className="flex flex-wrap gap-2">
+          {TIMING.map((t) => (
+            <Chip
+              key={t}
+              name="timing"
+              value={t}
+              selected={timing === t}
+              onSelect={setTiming}
+            />
+          ))}
         </div>
+      </div>
+
+      {/* Bezplatná obhliadka */}
+      <div className="mt-8">
+        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand mb-3">
+          Máte záujem o bezplatnú konzultáciu a obhliadku?
+        </span>
+        <div className="flex flex-wrap gap-2">
+          {CONSULT.map((c) => (
+            <Chip
+              key={c}
+              name="consult"
+              value={c}
+              selected={consult === c}
+              onSelect={setConsult}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Kde staviame */}
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-7">
         <Field label="Mesto" name="city" placeholder="Bratislava" />
         <Field label="PSČ" name="psc" placeholder="900 41" />
         <div className="sm:col-span-2">
@@ -274,8 +313,20 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
             placeholder="Napríklad: terasa 5×4 m, smer na juh, drevený dom..."
           />
         </div>
+      </div>
 
-        <label className="sm:col-span-2 flex items-start gap-3 text-xs text-mutedbrand cursor-pointer group/check">
+      {/* Kontakt — až na záver, keď je projekt popísaný */}
+      <div className="mt-9 border-t border-brown/[0.08] pt-8">
+        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand mb-5">
+          Kontaktné údaje
+        </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-7">
+          <Field label="Meno a priezvisko *" name="name" required placeholder="Ján Novák" />
+          <Field label="Telefón *" name="phone" type="tel" required placeholder="+421 901 234 567" />
+          <div className="sm:col-span-2">
+            <Field label="E-mail *" name="email" type="email" required placeholder="vase@meno.sk" />
+          </div>
+          <label className="sm:col-span-2 flex items-start gap-3 text-xs text-mutedbrand cursor-pointer group/check">
           <input type="checkbox" name="consent" required className="peer sr-only" />
           <span
             aria-hidden
@@ -299,8 +350,9 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
               ochrany osobných údajov
             </Link>
             .
-          </span>
-        </label>
+            </span>
+          </label>
+        </div>
       </div>
 
       <button
@@ -339,6 +391,41 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
         </span>
       </button>
     </form>
+  );
+}
+
+/** Textová voľba — použitá pri termíne realizácie a pri obhliadke */
+function Chip({
+  name,
+  value,
+  selected,
+  onSelect,
+}: {
+  name: string;
+  value: string;
+  selected: boolean;
+  onSelect: (v: string) => void;
+}) {
+  return (
+    <label
+      className={cn(
+        "cursor-pointer select-none rounded-full px-4 py-2.5 text-sm",
+        "ring-1 transition-all duration-200 active:scale-[0.98]",
+        selected
+          ? "bg-gold/[0.12] text-brown font-semibold ring-gold"
+          : "bg-white text-mutedbrand ring-brown/10 hover:text-brown hover:ring-gold/40"
+      )}
+    >
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        checked={selected}
+        onChange={(e) => onSelect(e.target.value)}
+        className="sr-only"
+      />
+      {value}
+    </label>
   );
 }
 

@@ -118,12 +118,7 @@ export default function PergolyPage() {
         {/* Variants */}
         <section id="variants" className="py-24 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
-            <SectionHeader
-              eyebrow="Varianty"
-              title="Tri prevedenia, jeden štandard kvality"
-              subtitle="Hliník, drevo, alebo prístrešok. Vyberte si štýl — technické riešenie a montáž zostávajú u nás."
-            />
-            <div className="mt-16 space-y-16 lg:space-y-24">
+            <div className="space-y-16 lg:space-y-24">
               {variants.map((v, i) => (
                 <div
                   key={v.name}
@@ -204,7 +199,7 @@ export default function PergolyPage() {
                 >
                   <Image
                     src={r.image}
-                    alt={`${r.category} — ${r.location}`}
+                    alt={r.location ? `${r.category} — ${r.location}` : r.category}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -212,9 +207,11 @@ export default function PergolyPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-brown/85 via-brown/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                     <div className="text-eyebrow text-gold/90">{r.category}</div>
-                    <div className="font-display font-semibold text-lg mt-1">
-                      {r.location}
-                    </div>
+                    {r.location && (
+                      <div className="font-display font-semibold text-lg mt-1">
+                        {r.location}
+                      </div>
+                    )}
                   </div>
                 </article>
               ))}

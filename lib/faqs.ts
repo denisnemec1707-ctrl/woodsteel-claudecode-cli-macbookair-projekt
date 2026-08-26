@@ -2,22 +2,17 @@ export const generalFaqs = [
   {
     question: "Ako dlho trvá kompletná realizácia?",
     answer:
-      "Od podpisu zmluvy po odovzdanie hotového diela uplynie zvyčajne 4-8 týždňov v závislosti od veľkosti, materiálu a doplnkov. Samotná montáž u vás na mieste trvá 3-7 dní.",
+      "Od podpisu zmluvy po odovzdanie hotového diela uplynie zvyčajne 8 – 12 týždňov, podľa rozsahu konštrukcie, zvoleného materiálu a doplnkov. Samotná montáž u vás doma trvá od jedného dňa, podľa rozsahu prác.",
   },
   {
     question: "Aké záruky poskytujete?",
     answer:
-      "Na konštrukciu poskytujeme záruku 5 rokov, na elektrické a motorické komponenty 2 roky, na povrchové úpravy 10 rokov. Pri reklamácii reagujeme do 48 hodín.",
-  },
-  {
-    question: "Pracujete len v okolí Bratislavy?",
-    answer:
-      "Realizujeme v celom Slovensku aj v okolitých štátoch (Rakúsko, Česko, Maďarsko). Pri vzdialenejších lokalitách počítame s mierne dlhším termínom obhliadky.",
+      "Na nosnú konštrukciu poskytujeme záruku 5 rokov, na povrchovú úpravu až 7 rokov a na elektrické a motorické komponenty 2 roky.",
   },
   {
     question: "Potrebujem stavebné povolenie?",
     answer:
-      "Záleží od veľkosti a typu konštrukcie. Pri väčšine pergol nie je potrebné stavebné povolenie, len ohlásenie drobnej stavby. Pri zimnej záhrade nad 25 m² často áno. Poradíme vám.",
+      "Závisí to od typu a rozmerov konštrukcie a od podmienok v danej lokalite. Otvorené konštrukcie spravidla postačuje ohlásiť ako drobnú stavbu, uzavreté a vykurované priestory majú prísnejší režim. Konkrétny postup pre váš pozemok preveríme ešte pred objednávkou.",
   },
   {
     question: "Ako prebieha cenová ponuka?",
@@ -27,15 +22,15 @@ export const generalFaqs = [
   {
     question: "Akým spôsobom sa platí?",
     answer:
-      "Štandardne 30% záloha po podpise zmluvy, 60% pred dodaním a 10% po finálnej montáži. Pre špecifické projekty vieme nastaviť individuálny splátkový kalendár.",
+      "Bankovým prevodom alebo v hotovosti. Cena sa uhrádza v zálohách naviazaných na priebeh zákazky — štandardne 20 % po podpise zmluvy, 70 % pred dodaním a 10 % po finálnej montáži. Pri špecifických projektoch vieme splátkový kalendár nastaviť individuálne.",
   },
 ];
 
 export const pergolaFaqs = [
   {
-    question: "Aký je rozdiel medzi bioklimatickou a klasickou pergolou?",
+    question: "Dá sa pergola neskôr zaskliť na zimnú záhradu?",
     answer:
-      "Bioklimatická pergola má nastaviteľné lamely v streche — môžete regulovať množstvo slnka aj prúdenie vzduchu. Klasická pergola má pevnú strechu (drevo alebo polykarbonát). Bioklimatické sú flexibilnejšie ale drahšie.",
+      "Áno. Každú pergolu navrhujeme tak, aby bola pripravená na neskoršie zasklenie. Ak sa preň rozhodnete až o pár rokov, konštrukciu netreba meniť — doplní sa posuvný systém a z pergoly sa stane plnohodnotná zimná záhrada.",
   },
   {
     question: "Drevo alebo hliník — čo si vybrať?",

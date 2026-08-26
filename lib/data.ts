@@ -30,7 +30,13 @@ export const team = [
   },
 ];
 
-export const realizations = [
+// `location` je voliteľná — pri fotkách, kde obec zatiaľ nemáme doplnenú,
+// karta zobrazí len kategóriu namiesto prázdneho riadka.
+export const realizations: {
+  location?: string;
+  category: string;
+  image: string;
+}[] = [
   {
     location: "BA — Vrakuňa",
     category: "Hliníková pergola",
@@ -85,6 +91,75 @@ export const realizations = [
     image:
       "/images/zimna-zahrada-horne-janiky-1.jpeg",
   },
+  {
+    category: "Zimná záhrada",
+    image:
+      "/images/zimna-zahrada-hlinikova-1.jpg",
+  },
+  // Drevené realizácie prevzaté z woodsteel.sk — konštrukcia je skutočne
+  // drevená, preto majú vlastnú kategóriu a nemiešajú sa s hliníkovými.
+  {
+    category: "Drevená zimná záhrada",
+    image:
+      "/images/drevena-zimna-zahrada2.jpg",
+  },
+  {
+    category: "Drevená zimná záhrada",
+    image:
+      "/images/drevena-zimna-zahrada3.jpg",
+  },
+  {
+    category: "Drevená zimná záhrada",
+    image:
+      "/images/drevena-zimna-zahrada4.jpg",
+  },
+  {
+    category: "Drevená zimná záhrada",
+    image:
+      "/images/drevena-zimna-zahrada5.jpg",
+  },
+  // Ďalšie hliníkové pergoly prevzaté z woodsteel.sk
+  {
+    category: "Hliníková pergola",
+    image:
+      "/images/hlinikova-pergola2.jpg",
+  },
+  {
+    category: "Hliníková pergola",
+    image:
+      "/images/hlinikova-pergola3.jpg",
+  },
+  {
+    category: "Hliníková pergola",
+    image:
+      "/images/hlinikova-pergola4.jpg",
+  },
+  {
+    category: "Hliníková pergola",
+    image:
+      "/images/hlinikova-pergola5.jpg",
+  },
+  // Prístrešky na auto — vlastné fotografie zákazníka
+  {
+    category: "Prístrešok na auto",
+    image:
+      "/images/pristresok-na-auto-1.jpg",
+  },
+  {
+    category: "Prístrešok na auto",
+    image:
+      "/images/pristresok-na-auto-2.jpg",
+  },
+  {
+    category: "Prístrešok na auto",
+    image:
+      "/images/pristresok-na-auto-3.jpg",
+  },
+  {
+    category: "Prístrešok na auto",
+    image:
+      "/images/pristresok-na-auto-4.jpg",
+  },
 ];
 
 // Skutočné recenzie zákazníkov. Text je prevzatý doslovne — citáty
@@ -126,16 +201,14 @@ export const categories = [
   {
     slug: "pergoly",
     name: "Pergoly",
-    tagline: "Hliníkové · Drevené · Prístrešky na auto",
     description:
-      "Bioklimatické pergoly s nastaviteľnými lamelami alebo klasické drevené konštrukcie z lepeného BSH dreva. Príprava na neskoršie zasklenie.",
+      "Hliníkové pergoly s moderným vzhľadom alebo klasické drevené konštrukcie z lepeného BSH dreva. Príprava na neskoršie zasklenie.",
     image:
       "/images/hlinikova-pergola-senec.jpeg",
   },
   {
     slug: "zimne-zahrady",
     name: "Zimné záhrady",
-    tagline: "Celoročné · Sezónne · Hliník · Drevo",
     description:
       "Plnohodnotná obytná zóna nezávislá od počasia. Izolačné dvojsklo, sliding systémy s plynulým otváraním.",
     image:
@@ -144,7 +217,6 @@ export const categories = [
   {
     slug: "zasklenie-teras",
     name: "Zasklenie terás",
-    tagline: "Posuvné systémy · Bezrámové sklo",
     description:
       "Premena otvorenej terasy na chránený priestor počas chladnejších mesiacov. Plne posuvné, otvorené v lete, uzavreté v zime.",
     image:
@@ -170,18 +242,45 @@ export const stats = [
   { value: "250+", label: "Realizácií ročne" },
   { value: "5+", label: "Rokov záruka" },
   { value: "5", label: "Krajín pôsobenia" },
-  { value: "24h", label: "Do odoslania cenovej ponuky" },
+  { value: "48h", label: "Do odoslania cenovej ponuky" },
 ];
 
 // `match` = cesty, pri ktorých sa položka označí ako aktívna (prefixová zhoda).
 // Ak chýba, použije sa `href`.
 export const navigation = [
-  { label: "Produkty", href: "/pergoly", match: ["/pergoly", "/zimne-zahrady", "/zasklenie-teras"], submenu: [
-    { label: "Pergoly", href: "/pergoly" },
-    { label: "Zimné záhrady", href: "/zimne-zahrady" },
-    { label: "Zasklenie terás", href: "/zasklenie-teras" },
-    { label: "Prístrešky na auto", href: "/pergoly#carport" },
-  ]},
+  {
+    label: "Produkty",
+    href: "/pergoly",
+    match: ["/pergoly", "/zimne-zahrady", "/zasklenie-teras"],
+    // Dve úrovne — kategória a jej prevedenia, rovnako ako na woodsteel.sk
+    submenu: [
+      {
+        label: "Pergoly",
+        href: "/pergoly",
+        items: [
+          { label: "Hliníkové pergoly", href: "/pergoly/hlinikove-pergoly" },
+          { label: "Drevené pergoly", href: "/pergoly/drevene-pergoly" },
+          { label: "Prístrešky na auto", href: "/pergoly/pristresky-na-auto" },
+        ],
+      },
+      {
+        label: "Zimné záhrady",
+        href: "/zimne-zahrady",
+        items: [
+          { label: "Hliníkové zimné záhrady", href: "/zimne-zahrady/hlinikove-zimne-zahrady" },
+          { label: "Drevené zimné záhrady", href: "/zimne-zahrady/drevene-zimne-zahrady" },
+        ],
+      },
+      {
+        label: "Zasklenie terás",
+        href: "/zasklenie-teras",
+        items: [
+          { label: "Rámové zasklenie terás", href: "/zasklenie-teras/ramove-zasklenie" },
+          { label: "Bezrámové zasklenie terás", href: "/zasklenie-teras/bezramove-zasklenie" },
+        ],
+      },
+    ],
+  },
   { label: "Realizácie", href: "/realizacie" },
   { label: "Showroom", href: "/showroom" },
   { label: "Články", href: "/clanky" },

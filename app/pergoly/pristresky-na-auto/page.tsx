@@ -4,7 +4,7 @@ import { ProductSubpage } from "@/components/ProductSubpage";
 export const metadata: Metadata = {
   title: "Prístrešky na auto - WoodSteel.sk",
   description:
-    "Hliníkové alebo drevené prístrešky na auto. Ochrana pred slnkom, snehom a krupobitím. Jedno alebo dvojstojiskové prevedenia.",
+    "Prístrešky na auto na mieru — hliníkové aj drevené. Statický výpočet pre vašu lokalitu, odvodnenie skryté v konštrukcii, vlastná SK výroba.",
   alternates: { canonical: "https://woodsteel.sk/pergoly/pristresky-na-auto/" },
 };
 
@@ -16,28 +16,26 @@ export default function PristreskyNaAutoPage() {
         eyebrow: "Prístrešky na auto",
         title: (
           <>
-            Prístrešky na auto. <span className="text-gold">Roky bez údržby.</span>
+            Prístrešky na auto, ktoré <span className="text-gold">vydržia počasie</span>.
           </>
         ),
         subtitle:
-          "Hliníkové alebo drevené konštrukcie chrániace auto pred slnkom, snehom a krupobitím. Jedno alebo dvojstojiskové prevedenia s integrovaným odvodnením.",
+          "Konštrukcia na mieru, ktorá ochráni auto pred slnkom, snehom aj krupobitím. Jedno- alebo dvojstojisková, s odvodnením skrytým priamo v profiloch.",
         image:
           "/images/IMG_5562.jpg",
       }}
       intro={{
-        title: "Pevnosť pre slovenské počasie",
+        title: "Prístrešok, ktorý odolá snehu aj vetru",
         body:
-          "Naše prístrešky sú dimenzované pre slovenské zaťaženie snehom (do 2 kN/m²) a vetrom. Hliníkové prevedenie je bezúdržbové, drevené pôsobí prirodzene a hodí sa k starším rodinným domom.",
+          "Každý prístrešok navrhujeme podľa snehovej oblasti a zaťaženia vetrom v mieste stavby — nie podľa katalógu. Hliníkové prevedenie je štíhle a bezúdržbové, drevené pôsobí prirodzene a lepšie sadne k starším domom.",
       }}
       features={[
-        "Hliník alebo drevo na výber",
-        "Jedno alebo dvojstojisko",
-        "Plech, polykarbonát alebo lamely",
-        "Statický výpočet pre vašu lokalitu",
-        "Integrovaný odvodňovací systém",
-        "Voliteľné LED osvetlenie",
-        "Garancia 5+ rokov",
-        "Bez stavebného povolenia (drobná stavba)",
+        "Hliníkové aj drevené prevedenie",
+        "Rozmery na mieru — pre jedno aj viac vozidiel",
+        "Konštrukcia dimenzovaná na miestne podmienky",
+        "Odvodnenie riešené priamo v konštrukcii",
+        "Povrchová úprava vo farbe podľa vzorkovníka",
+        "Záruka 5+ rokov",
       ]}
       realizationFilter={(c) => c.toLowerCase().includes("prístrešok") || c.toLowerCase().includes("carport")}
       stickyName="Prístrešok na auto"

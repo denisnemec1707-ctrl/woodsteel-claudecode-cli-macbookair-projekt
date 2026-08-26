@@ -6,16 +6,20 @@ export function Hero() {
   return (
     <section className="relative min-h-[88svh] sm:min-h-[100svh] flex items-end overflow-hidden">
       <Image
-        src="/images/zimna-zahrada-rovinka.jpeg"
-        alt="Zimná záhrada — Rovinka"
+        src="/images/hero-dunajska-luzna.jpg"
+        alt="Zimná záhrada — Dunajská Lužná"
         fill
         priority
         sizes="100vw"
         className="object-cover scale-105"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-brown/95 via-brown/55 to-brown/15" />
-      <div className="absolute inset-0 bg-gradient-to-r from-brown/40 via-transparent to-transparent" />
+      {/* Fotka je svetlá a málo kontrastná — plošný závoj by ju zmazal.
+          Tmavíme preto hlavne ľavý dolný roh, kde sedí text. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-brown/90 via-brown/45 to-brown/10 sm:via-brown/30 sm:to-brown/5" />
+      {/* Na mobile text zaberá celú šírku, takže bočné tmavenie musí byť
+          slabšie — inak fotku zmaže úplne. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brown/45 via-transparent to-transparent sm:from-brown/75 sm:via-brown/15" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 lg:px-8 pb-16 pt-28 sm:pb-24 sm:pt-32 lg:pb-32 lg:pt-40">
         <div className="max-w-3xl">
@@ -62,7 +66,7 @@ export function Hero() {
 
           <div className="mt-8 sm:mt-10 inline-flex items-center gap-2 text-cream/70 text-xs reveal" style={{ animationDelay: "420ms" }}>
             <MapPin size={12} />
-            Realizácia: Zimná záhrada, Rovinka 2025
+            Realizácia: Zimná záhrada, Dunajská Lužná
           </div>
         </div>
       </div>

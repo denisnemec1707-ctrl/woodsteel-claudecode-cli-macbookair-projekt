@@ -119,23 +119,49 @@ export function Header({ overlay = false }: HeaderProps) {
 
                 {item.submenu && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="bg-white rounded-xl shadow-xl border border-cream py-2 min-w-[220px]">
-                      {item.submenu.map((s) => {
-                        const subActive = isActive(pathname, s.href);
+                    <div className="flex gap-8 rounded-2xl border border-cream bg-white px-7 py-6 shadow-[0_20px_50px_rgba(63,34,17,0.14)]">
+                      {item.submenu.map((group) => {
+                        const groupActive = isActive(pathname, group.href);
                         return (
-                          <Link
-                            key={s.href}
-                            href={s.href}
-                            aria-current={subActive ? "page" : undefined}
-                            className={cn(
-                              "block px-5 py-3 text-sm transition-colors",
-                              subActive
-                                ? "bg-cream/60 text-gold font-semibold"
-                                : "text-charcoal hover:bg-cream/50 hover:text-gold"
+                          <div key={group.href} className="min-w-[190px]">
+                            <Link
+                              href={group.href}
+                              aria-current={groupActive ? "page" : undefined}
+                              className={cn(
+                                "block font-display font-bold text-[0.95rem] transition-colors",
+                                groupActive ? "text-gold" : "text-brown hover:text-gold"
+                              )}
+                            >
+                              {group.label}
+                            </Link>
+                            <span
+                              aria-hidden
+                              className="mt-2.5 mb-1 block h-px w-8 bg-gold/40"
+                            />
+                            {group.items.length > 0 && (
+                              <ul className="mt-2 space-y-0.5">
+                                {group.items.map((s) => {
+                                  const subActive = isActive(pathname, s.href);
+                                  return (
+                                    <li key={s.href}>
+                                      <Link
+                                        href={s.href}
+                                        aria-current={subActive ? "page" : undefined}
+                                        className={cn(
+                                          "block rounded-lg px-2 -mx-2 py-1.5 text-sm transition-colors",
+                                          subActive
+                                            ? "bg-cream/60 text-gold font-semibold"
+                                            : "text-mutedbrand hover:bg-cream/50 hover:text-brown"
+                                        )}
+                                      >
+                                        {s.label}
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
                             )}
-                          >
-                            {s.label}
-                          </Link>
+                          </div>
                         );
                       })}
                     </div>
@@ -229,22 +255,46 @@ export function Header({ overlay = false }: HeaderProps) {
                     {item.label}
                   </Link>
                   {item.submenu && (
-                    <div className="pl-6 pb-2 flex flex-col">
-                      {item.submenu.map((s) => {
-                        const subActive = isActive(pathname, s.href);
+                    <div className="pl-5 pb-3 flex flex-col gap-3">
+                      {item.submenu.map((group) => {
+                        const groupActive = isActive(pathname, group.href);
                         return (
-                          <Link
-                            key={s.href}
-                            href={s.href}
-                            onClick={() => setOpen(false)}
-                            aria-current={subActive ? "page" : undefined}
-                            className={cn(
-                              "px-3 py-2 text-sm transition-colors",
-                              subActive ? "text-gold font-semibold" : "text-mutedbrand hover:text-gold"
+                          <div key={group.href}>
+                            <Link
+                              href={group.href}
+                              onClick={() => setOpen(false)}
+                              aria-current={groupActive ? "page" : undefined}
+                              className={cn(
+                                "block rounded-lg px-3 py-2.5 font-display font-bold text-[0.95rem] transition-colors",
+                                groupActive ? "text-gold" : "text-brown hover:text-gold"
+                              )}
+                            >
+                              {group.label}
+                            </Link>
+                            {group.items.length > 0 && (
+                              <div className="ml-3 border-l border-cream pl-3 flex flex-col">
+                                {group.items.map((s) => {
+                                  const subActive = isActive(pathname, s.href);
+                                  return (
+                                    <Link
+                                      key={s.href}
+                                      href={s.href}
+                                      onClick={() => setOpen(false)}
+                                      aria-current={subActive ? "page" : undefined}
+                                      className={cn(
+                                        "px-3 py-2.5 text-sm transition-colors",
+                                        subActive
+                                          ? "text-gold font-semibold"
+                                          : "text-mutedbrand hover:text-gold"
+                                      )}
+                                    >
+                                      {s.label}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
                             )}
-                          >
-                            {s.label}
-                          </Link>
+                          </div>
                         );
                       })}
                     </div>

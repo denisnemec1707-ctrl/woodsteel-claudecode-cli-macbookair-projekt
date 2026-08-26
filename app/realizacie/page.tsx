@@ -20,12 +20,12 @@ export default function RealizaciePage() {
               <span className="text-mutedbrand">Realizácie</span>
             </div>
             <h1 className="text-display-1 font-extrabold text-brown max-w-4xl mx-auto">
-              250+ dokončených projektov.<br className="hidden md:inline" />
-              <span className="text-gold">Pozrite si pár z nich.</span>
+              350+ realizácií<br className="hidden md:inline" />
+              <span className="text-gold">v 4 krajinách EÚ.</span>
             </h1>
             <p className="mt-6 text-mutedbrand text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-              Pergoly, zimné záhrady a zasklenia terás po celom Slovensku.
-              Každý projekt navrhnutý a postavený naším tímom.
+              Výber z dokončených projektov — pergoly, zimné záhrady
+              aj zasklenia terás.
             </p>
           </div>
         </section>
@@ -35,14 +35,16 @@ export default function RealizaciePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
               {realizations.map((r) => (
                 <article key={r.image} className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream">
-                  <Image src={r.image} alt={`${r.category} — ${r.location}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src={r.image} alt={r.location ? `${r.category} — ${r.location}` : r.category} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brown/85 via-brown/30 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6 text-white">
                     <div className="text-eyebrow text-gold/95 mb-1">{r.category}</div>
-                    <div className="flex items-center gap-1.5 font-display font-semibold text-lg">
-                      <MapPin size={14} className="opacity-80" />
-                      {r.location}
-                    </div>
+                    {r.location && (
+                      <div className="flex items-center gap-1.5 font-display font-semibold text-lg">
+                        <MapPin size={14} className="opacity-80" />
+                        {r.location}
+                      </div>
+                    )}
                   </div>
                 </article>
               ))}

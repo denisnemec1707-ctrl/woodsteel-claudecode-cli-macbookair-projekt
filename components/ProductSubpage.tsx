@@ -86,11 +86,13 @@ export function ProductSubpage({ breadcrumb, hero, intro, features, realizationF
               <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
                 {projects.map((r) => (
                   <article key={r.image} className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream">
-                    <Image src={r.image} alt={`${r.category} — ${r.location}`} fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src={r.image} alt={r.location ? `${r.category} — ${r.location}` : r.category} fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-brown/85 via-brown/20 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                       <div className="text-eyebrow text-gold/90">{r.category}</div>
-                      <div className="font-display font-semibold text-lg mt-1">{r.location}</div>
+                      {r.location && (
+                        <div className="font-display font-semibold text-lg mt-1">{r.location}</div>
+                      )}
                     </div>
                   </article>
                 ))}

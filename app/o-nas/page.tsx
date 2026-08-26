@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Header } from "@/components/Header";
+import { BacklitSign } from "@/components/BacklitSign";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Team } from "@/components/Team";
+import { CoverageMap } from "@/components/CoverageMap";
 import { CounterStat } from "@/components/CounterStat";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
@@ -40,21 +40,10 @@ export default function ONasPage() {
       <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[60svh] flex items-end overflow-hidden">
-          <Image
-            src="/images/zimna-zahrada-hamuliakovo.jpeg"
-            alt="WoodSteel — náš príbeh"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brown/95 via-brown/60 to-brown/20" />
+          <BacklitSign />
+          {/* Spodok stmavíme kvôli čitateľnosti nadpisu, hore necháme svietiť nápis */}
+          <div className="absolute inset-0 z-[3] bg-gradient-to-t from-brown/95 via-brown/25 to-transparent" />
           <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-16 pt-32">
-            <div className="text-eyebrow text-gold mb-4 inline-flex items-center gap-2">
-              <Link href="/" className="hover:text-white transition-colors">WoodSteel</Link>
-              <span>/</span>
-              <span className="text-white">O nás</span>
-            </div>
             <h1 className="text-display-1 font-extrabold text-white max-w-3xl">
               Dávame priestoru <span className="text-gold">nový rozmer</span>.
             </h1>
@@ -134,6 +123,8 @@ export default function ONasPage() {
             </div>
           </div>
         </section>
+
+        <CoverageMap />
 
         {/* Values */}
         <section className="py-24 lg:py-32 bg-cream/40">

@@ -37,7 +37,9 @@ export function CounterStat({ value, label, invert = false }: Props) {
       const start = performance.now();
       const ease = (t: number) => 1 - Math.pow(1 - t, 3);
       const tick = (now: number) => {
-        const progress = Math.min(1, (now - start) / duration);
+        // rAF odovzdáva čas začiatku snímky, ktorý môže predchádzať `start` —
+        // bez orezania by prvé snímky vykreslili záporné číslo
+        const progress = Math.min(1, Math.max(0, (now - start) / duration));
         const current = target * ease(progress);
         const formatted = Number.isInteger(target)
           ? Math.round(current).toString()

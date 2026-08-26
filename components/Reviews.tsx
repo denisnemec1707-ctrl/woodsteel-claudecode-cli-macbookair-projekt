@@ -49,7 +49,7 @@ export function Reviews() {
                 <Star key={i} size={18} className="fill-[#cbab58] text-[#cbab58]" />
               ))}
             </span>
-            <span className="text-brown font-bold text-lg">4.9 / 5</span>
+            <span className="text-brown font-bold text-lg">4.8 / 5</span>
             <span className="text-mutedbrand text-sm">na základe hodnotení na Googli</span>
           </div>
           <a

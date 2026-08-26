@@ -5,7 +5,7 @@ import { pergolaFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "Hliníkové pergoly - WoodSteel.sk",
   description:
-    "Bioklimatické hliníkové pergoly s nastaviteľnými lamelami. Bezúdržbová konštrukcia, prirodzene odtekajúca voda, voliteľné LED a screen rolety.",
+    "Hliníkové pergoly na mieru s integrovaným žľabom a prípravou na neskoršie zasklenie. Odolné voči počasiu, ľahké na údržbu, s modernými líniami.",
   alternates: { canonical: "https://woodsteel.sk/pergoly/hlinikove-pergoly/" },
 };
 
@@ -17,28 +17,27 @@ export default function HlinikovePergolyPage() {
         eyebrow: "Hliníkové pergoly",
         title: (
           <>
-            Bioklimatické pergoly s <span className="text-gold">nastaviteľnými lamelami</span>.
+            Hliníková pergola <span className="text-gold">podľa vašich predstáv</span>.
           </>
         ),
         subtitle:
-          "Hliník bez údržby. Nastaviteľné lamely v streche regulujú slnko aj prúdenie vzduchu. Plne integrované LED osvetlenie a tienenie po stranách.",
+          "Odolná voči poveternostným vplyvom, ľahká na údržbu a s moderným vzhľadom. Cenovo dostupný systém s integrovaným žľabom a rôznymi možnosťami strešnej krytiny.",
         image:
           "/images/hlinikova-pergola-senec.jpeg",
       }}
       intro={{
-        title: "Bioklimatický komfort",
+        title: "Pergola, ktorá rastie s vami",
         body:
-          "Nastaviteľné hliníkové lamely v streche umožňujú regulovať množstvo slnečného svetla aj prúdenie vzduchu. V daždi sa automaticky uzatvoria a odvádzajú vodu cez integrovaný systém v stĺpoch.",
+          "Rozmery, odtieň aj strešnú krytinu volíme podľa vášho domu. Kedykoľvek ju doplníte o bočné screen rolety proti slnku a vetru — a neskôr aj o zasklenie.",
       }}
       features={[
-        "Bioklimatické nastaviteľné lamely",
         "Hliník bez údržby (eloxovaný)",
         "Príprava na neskoršie zasklenie",
-        "Voliteľné motorické ovládanie cez app",
         "Integrované LED osvetlenie",
-        "Screen rolety po stranách",
-        "Odtokový systém v stĺpoch",
-        "Garancia 5+ rokov",
+        "Bočné screen rolety ako tieniaca technika",
+        "Integrovaný žľab v konštrukcii",
+        "Rôzne možnosti strešnej krytiny",
+        "Záruka 5+ rokov",
       ]}
       realizationFilter={(c) => c.toLowerCase().includes("hliníková pergola") || c.toLowerCase().includes("pergola")}
       faqs={pergolaFaqs.slice(0, 5)}

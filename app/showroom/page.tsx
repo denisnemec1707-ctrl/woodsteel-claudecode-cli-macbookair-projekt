@@ -38,8 +38,8 @@ const videos = [
 /** Zážitok, ktorý sa nedá sprostredkovať fotkou ani vizualizáciou */
 const experience = [
   {
-    title: "Ako sa mení svetlo",
-    text: "Otočíte lamely a v priebehu sekundy sledujete, ako sa tieň presúva po podlahe. Na rendere to vyzerá rovnako vždy.",
+    title: "Koľko priestoru tým získate",
+    text: "Meter na papieri a meter pod nohami sú dve rôzne veci. Naživo si rozmer overíte za pár sekúnd.",
   },
   {
     title: "Ako znie ticho",
@@ -64,7 +64,7 @@ export default function ShowroomPage() {
         <section className="relative min-h-[68svh] flex items-end overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/showroom-rovinka.jpeg"
+              src="/images/hero-uvod.jpg"
               alt="Výstavná zimná záhrada WoodSteel v Rovinke"
               fill
               priority
@@ -72,7 +72,9 @@ export default function ShowroomPage() {
               className="object-cover ws-kenburns"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-brown/95 via-brown/55 to-brown/20" />
+          {/* Fotka je svetlá — plošný závoj by ju zmazal, tmavíme hlavne pod textom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brown/90 via-brown/45 to-brown/10 sm:via-brown/30 sm:to-brown/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brown/45 via-transparent to-transparent sm:from-brown/75 sm:via-brown/15" />
 
           <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-16 pt-32">
             <div className="text-eyebrow text-gold mb-4 inline-flex items-center gap-2">
@@ -134,10 +136,7 @@ export default function ShowroomPage() {
                 alebo keď začne pršať.
               </p>
               <p className="mt-4 text-mutedbrand text-base lg:text-lg leading-relaxed">
-                V Rovinke si sadnete pod hotovú zimnú záhradu, zatiahnete tienenie
-                a chvíľu jednoducho zostanete. Býva to moment, po ktorom sa
-                rozhovor prestane točiť okolo profilov a začne okolo toho, kam
-                príde stôl.
+                V Rovinke si to vyskúšate naživo.
               </p>
 
               <p className="mt-8 font-display italic text-lg text-brown/90 border-l-2 border-gold/50 pl-5">

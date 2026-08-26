@@ -31,7 +31,6 @@ export function Categories() {
               <div className="absolute inset-0 bg-gradient-to-t from-brown/95 via-brown/40 to-transparent" />
 
               <div className="absolute inset-0 p-6 sm:p-7 lg:p-10 flex flex-col justify-end text-white">
-                <div className="text-eyebrow text-gold mb-2 sm:mb-3">{c.tagline}</div>
                 <h3 className="text-2xl sm:text-display-3 font-bold text-white">{c.name}</h3>
                 <p className="mt-2 sm:mt-3 text-cream/90 text-sm sm:text-base leading-relaxed line-clamp-3 max-w-md">
                   {c.description}

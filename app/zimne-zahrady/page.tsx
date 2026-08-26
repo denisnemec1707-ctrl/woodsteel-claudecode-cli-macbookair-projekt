@@ -19,7 +19,7 @@ const variants = [
     name: "Hliníková zimná záhrada",
     tag: "Hliník",
     description:
-      "Štíhle profily, izolačné dvojsklo, bezúdržbová konštrukcia s desaťročiami životnosti. Veľké presklené plochy + kvalitné tesnenie umožňujú celoročné používanie.",
+      "Ľahká konštrukcia a veľkorysé presklenie s maximom svetla. Čistý, moderný vzhľad a priestor, ktorý si užijete po celý rok.",
     image:
       "/images/zimna-zahrada-hamuliakovo.jpeg",
   },
@@ -27,7 +27,7 @@ const variants = [
     name: "Drevená zimná záhrada",
     tag: "Drevo",
     description:
-      "Lepené BSH drevo dodáva priestoru teplo a charakter klasiky. Konštrukcia z tvarovo stálych profilov, garantovaná dlhá životnosť.",
+      "Prirodzené teplo a charakter dreva. Materiál, ktorý priestoru dodá útulnosť a časom získa patinu.",
     image:
       "/images/drevena-zimna-zahrada5.jpg",
   },
@@ -153,11 +153,13 @@ export default function ZimneZahradyPage() {
             <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
               {projects.map((r) => (
                 <article key={r.image} className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream">
-                  <Image src={r.image} alt={`${r.category} — ${r.location}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src={r.image} alt={r.location ? `${r.category} — ${r.location}` : r.category} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brown/85 via-brown/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                     <div className="text-eyebrow text-gold/90">{r.category}</div>
-                    <div className="font-display font-semibold text-lg mt-1">{r.location}</div>
+                    {r.location && (
+                      <div className="font-display font-semibold text-lg mt-1">{r.location}</div>
+                    )}
                   </div>
                 </article>
               ))}

@@ -21,7 +21,7 @@ export default function DreveneZimneZahradyPage() {
           </>
         ),
         subtitle:
-          "Lepené BSH drevo dodáva priestoru teplo a charakter klasiky. Konštrukcia z tvarovo stálych profilov, garantovaná dlhá životnosť.",
+          "Drevo prináša do priestoru teplo a charakter, aké sa nedajú napodobniť. Prirodzený materiál, ktorý časom nezostarne — len získa patinu a zostane samozrejmou súčasťou domu.",
         image:
           "/images/drevena-zimna-zahrada5.jpg",
       }}
@@ -36,11 +36,11 @@ export default function DreveneZimneZahradyPage() {
         "Sliding posuvné systémy",
         "Príprava na vykurovanie / klimatizáciu",
         "Voliteľné automatizované tienenie",
-        "Garancia 5+ rokov",
+        "Záruka 5+ rokov",
         "Vlastná SK výroba",
         "Impregnácia proti UV a vlhkosti",
       ]}
-      realizationFilter={(c) => c.toLowerCase().includes("drevená zimná") || c.toLowerCase().includes("zimná")}
+      realizationFilter={(c) => c.toLowerCase().includes("drevená zimná")}
       faqs={zimnaZahradaFaqs.slice(0, 5)}
       stickyName="Drevená zimná záhrada"
     />

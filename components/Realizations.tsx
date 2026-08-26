@@ -22,7 +22,7 @@ export function Realizations() {
             >
               <Image
                 src={r.image}
-                alt={`${r.category} — ${r.location}`}
+                alt={r.location ? `${r.category} — ${r.location}` : r.category}
                 fill
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -31,10 +31,12 @@ export function Realizations() {
 
               <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 lg:p-6 text-white">
                 <div className="text-eyebrow text-gold/95 mb-1">{r.category}</div>
-                <div className="flex items-center gap-1.5 font-display font-semibold text-base sm:text-lg">
-                  <MapPin size={14} className="opacity-80" />
-                  {r.location}
-                </div>
+                {r.location && (
+                  <div className="flex items-center gap-1.5 font-display font-semibold text-base sm:text-lg">
+                    <MapPin size={14} className="opacity-80" />
+                    {r.location}
+                  </div>
+                )}
               </div>
             </article>
           ))}

@@ -5,7 +5,7 @@ import { pergolaFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "Drevené pergoly - WoodSteel.sk",
   description:
-    "Drevené pergoly z lepeného BSH dreva s tvarovou stálosťou. Príprava na neskoršie zasklenie, vlastná SK výroba, 5+ rokov záruka.",
+    "Drevené pergoly na mieru z lepeného dreva. Prirodzené teplo, tvarová stálosť a príprava na neskoršie zasklenie. Vlastná SK výroba.",
   alternates: { canonical: "https://woodsteel.sk/pergoly/drevene-pergoly/" },
 };
 
@@ -21,26 +21,24 @@ export default function DrevenePergolyPage() {
           </>
         ),
         subtitle:
-          "Lepené BSH drevo s tvarovou stálosťou, voliteľná príprava na neskoršie zasklenie. Vhodné pre tradičné aj moderné fasády.",
+          "Prirodzený materiál, ktorý priestoru dodá teplo a časom získa patinu. Sadne k tradičnej fasáde rovnako ako k novostavbe.",
         image:
-          "/images/drevena-pergola.jpg",
+          "/images/drevena-pergola-hero.jpg",
       }}
       intro={{
-        title: "BSH drevo — pevnosť a estetika",
+        title: "Prírodné drevo, ktoré vydrží",
         body:
-          "Lepené BSH drevo (Brettschichtholz) je vrstvená konštrukcia, ktorá kombinuje pevnosť ocele s teplom prírodného materiálu. Nepraská, nesúsadá a po impregnácii vydrží desaťročia.",
+          "Používame lepené drevo — vrstvenú konštrukciu, ktorá nepraská ani sa nekrúti a udrží tvar aj po rokoch. Povrchová úprava ju chráni pred slnkom a vlhkosťou, takže pergola starne pomaly a pekne.",
       }}
       features={[
-        "Lepené BSH drevo (Brettschichtholz)",
-        "Príprava na neskoršie zasklenie",
-        "Integrovaný odvodňovací systém",
-        "Voliteľné LED osvetlenie a screen rolety",
-        "Garancia 5+ rokov",
-        "Vlastná SK výroba a montáž",
-        "Statický posudok pre vašu lokalitu",
-        "Impregnácia proti UV a vlhkosti",
+        "Lepené drevo, ktoré nepraská ani sa nekrúti",
+        "Povrchová úprava proti slnku a vlhkosti",
+        "Integrované odvodnenie konštrukcie",
+        "Pripravená na neskoršie zasklenie",
+        "Voliteľné LED osvetlenie a bočné screen rolety",
+        "Záruka 5+ rokov",
       ]}
-      realizationFilter={(c) => c.toLowerCase().includes("drevená pergola") || c.toLowerCase().includes("pergola")}
+      realizationFilter={(c) => c.toLowerCase().includes("drevená pergola")}
       faqs={pergolaFaqs.slice(0, 5)}
       stickyName="Drevená pergola"
     />

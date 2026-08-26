@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/zimne-zahrady/drevene-zimne-zahrady`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/zimne-zahrady/hlinikove-zimne-zahrady`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/zasklenie-teras`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/zasklenie-teras/ramove-zasklenie`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/zasklenie-teras/bezramove-zasklenie`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/realizacie`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/realizacie/realizacie-drevene-pergoly`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/realizacie/realizacie-hlinikove-pergoly`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },

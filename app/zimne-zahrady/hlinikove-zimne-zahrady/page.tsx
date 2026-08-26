@@ -21,7 +21,7 @@ export default function HlinikoveZimneZahradyPage() {
           </>
         ),
         subtitle:
-          "Štíhle profily (od 50 mm), izolačné dvojsklo, bezúdržbová konštrukcia s desaťročiami životnosti. Veľké presklené plochy + kvalitné tesnenie pre celoročné používanie.",
+          "Ľahká konštrukcia a veľkorysé presklenie, ktoré do priestoru pustí maximum svetla. Čisté línie, ktoré nekonkurujú výhľadu, a priestor pripravený na celoročné využitie — v lete aj uprostred zimy.",
         image:
           "/images/zimna-zahrada-hamuliakovo.jpeg",
       }}
@@ -37,10 +37,10 @@ export default function HlinikoveZimneZahradyPage() {
         "Sliding posuvné systémy",
         "Voliteľné kúrenie / klimatizácia",
         "Plne automatizované tienenie",
-        "Garancia 5+ rokov",
+        "Záruka 5+ rokov",
         "Vlastná SK výroba",
       ]}
-      realizationFilter={(c) => c.toLowerCase().includes("hliníková zimná") || c.toLowerCase().includes("zimná")}
+      realizationFilter={(c) => c.toLowerCase().includes("zimná") && !c.toLowerCase().includes("drevená")}
       faqs={zimnaZahradaFaqs.slice(0, 5)}
       stickyName="Hliníková zimná záhrada"
     />
