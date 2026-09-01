@@ -5,7 +5,7 @@ import { zimnaZahradaFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "Drevené zimné záhrady - WoodSteel.sk",
   description:
-    "Drevené zimné záhrady z BSH dreva. Teplo a charakter klasiky, izolačné dvojsklo, garancia 5+ rokov, vlastná SK výroba.",
+    "Drevené zimné záhrady z BSH dreva. Teplo a charakter klasiky, garancia 5+ rokov, vlastná SK výroba.",
   alternates: { canonical: "https://woodsteel.sk/zimne-zahrady/drevene-zimne-zahrady/" },
 };
 
@@ -32,10 +32,8 @@ export default function DreveneZimneZahradyPage() {
       }}
       features={[
         "Lepené BSH drevo (Brettschichtholz)",
-        "Izolačné dvojsklo Ug ≤ 1.0",
         "Sliding posuvné systémy",
         "Príprava na vykurovanie / klimatizáciu",
-        "Voliteľné automatizované tienenie",
         "Záruka 5+ rokov",
         "Vlastná SK výroba",
         "Impregnácia proti UV a vlhkosti",

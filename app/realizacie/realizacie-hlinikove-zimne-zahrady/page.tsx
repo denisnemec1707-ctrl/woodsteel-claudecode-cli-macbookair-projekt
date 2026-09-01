@@ -3,7 +3,7 @@ import { RealizationsSubpage } from "@/components/RealizationsSubpage";
 
 export const metadata: Metadata = {
   title: "Realizácie - Hliníkové zimné záhrady - WoodSteel.sk",
-  description: "Naše dokončené realizácie hliníkových zimných záhrad — štíhle profily, izolačné dvojsklo.",
+  description: "Naše dokončené realizácie hliníkových zimných záhrad — bezúdržbové konštrukcie na mieru.",
   alternates: { canonical: "https://woodsteel.sk/realizacie/realizacie-hlinikove-zimne-zahrady/" },
 };
 

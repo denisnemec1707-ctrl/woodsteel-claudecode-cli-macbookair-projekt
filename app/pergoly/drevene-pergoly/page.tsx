@@ -36,6 +36,7 @@ export default function DrevenePergolyPage() {
         "Integrované odvodnenie konštrukcie",
         "Pripravená na neskoršie zasklenie",
         "Voliteľné LED osvetlenie a bočné screen rolety",
+        "Voľba základných a prémiových strešných krytín",
         "Záruka 5+ rokov",
       ]}
       realizationFilter={(c) => c.toLowerCase().includes("drevená pergola")}

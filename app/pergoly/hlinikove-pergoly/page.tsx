@@ -31,12 +31,12 @@ export default function HlinikovePergolyPage() {
           "Rozmery, odtieň aj strešnú krytinu volíme podľa vášho domu. Kedykoľvek ju doplníte o bočné screen rolety proti slnku a vetru — a neskôr aj o zasklenie.",
       }}
       features={[
-        "Hliník bez údržby (eloxovaný)",
+        "Povrchová úprava hliníka komaxit",
         "Príprava na neskoršie zasklenie",
-        "Integrované LED osvetlenie",
-        "Bočné screen rolety ako tieniaca technika",
+        "Integrované LED osvetlenie ako voliteľný doplnok",
+        "Možnosť osadenia tieniacej techniky (screenové rolety)",
         "Integrovaný žľab v konštrukcii",
-        "Rôzne možnosti strešnej krytiny",
+        "Voľba základných a prémiových strešných krytín",
         "Záruka 5+ rokov",
       ]}
       realizationFilter={(c) => c.toLowerCase().includes("hliníková pergola") || c.toLowerCase().includes("pergola")}

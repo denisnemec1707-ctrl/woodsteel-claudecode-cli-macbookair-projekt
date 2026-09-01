@@ -5,7 +5,7 @@ import { zimnaZahradaFaqs } from "@/lib/faqs";
 export const metadata: Metadata = {
   title: "Hliníkové zimné záhrady - WoodSteel.sk",
   description:
-    "Hliníkové zimné záhrady so štíhlymi profilmi. Izolačné dvojsklo, sliding systémy, bezúdržbová konštrukcia, garancia 5+ rokov.",
+    "Hliníkové zimné záhrady na mieru. Sliding systémy, bezúdržbová konštrukcia s úpravou komaxit, garancia 5+ rokov.",
   alternates: { canonical: "https://woodsteel.sk/zimne-zahrady/hlinikove-zimne-zahrady/" },
 };
 
@@ -26,17 +26,19 @@ export default function HlinikoveZimneZahradyPage() {
           "/images/zimna-zahrada-hamuliakovo.jpeg",
       }}
       intro={{
-        title: "Štíhle profily, maximálne sklo",
+        title: "Krásny dizajn, maximum svetla",
         body:
-          "Hliníkové profily s prerušeným tepelným mostom umožňujú vytvoriť maximalisticky veľké zasklené plochy bez kompenzácie tepelného komfortu. Konštrukcia je bezúdržbová a po elektrolytickom eloxovaní vydrží desaťročia.",
+          "Hliníková zimná záhrada poskytuje ideálny pomer cena/výkon — spravíme ju v sezónnom alebo aj celoročnom prevedení, stačí si vybrať variant. Konštrukcia je bezúdržbová a s povrchovou úpravou komaxit vydrží desaťročia.",
       }}
       features={[
-        "Štíhle hliníkové profily (od 50 mm)",
-        "Prerušený tepelný most",
-        "Izolačné dvojsklo Ug ≤ 1.0",
+        "Povrchová úprava hliníka komaxit",
+        "Zasklenie rámové / bezrámové",
         "Sliding posuvné systémy",
+        "Integrované LED osvetlenie ako voliteľný doplnok",
+        "Možnosť osadenia tieniacej techniky (screenové rolety)",
+        "Integrovaný žľab v konštrukcii",
+        "Voľba základných a prémiových strešných krytín",
         "Voliteľné kúrenie / klimatizácia",
-        "Plne automatizované tienenie",
         "Záruka 5+ rokov",
         "Vlastná SK výroba",
       ]}

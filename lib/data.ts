@@ -57,7 +57,7 @@ export const realizations: {
   },
   {
     location: "Rovinka",
-    category: "Zimná záhrada",
+    category: "Zasklenie terasy",
     image:
       "/images/zimna-zahrada-rovinka.jpeg",
   },
@@ -91,71 +91,72 @@ export const realizations: {
     image:
       "/images/zimna-zahrada-horne-janiky-1.jpeg",
   },
-  {
-    category: "Zimná záhrada",
-    image:
-      "/images/zimna-zahrada-hlinikova-1.jpg",
-  },
   // Drevené realizácie prevzaté z woodsteel.sk — konštrukcia je skutočne
   // drevená, preto majú vlastnú kategóriu a nemiešajú sa s hliníkovými.
   {
+    location: "Rovinka",
     category: "Drevená zimná záhrada",
     image:
       "/images/drevena-zimna-zahrada2.jpg",
   },
   {
+    location: "Rovinka",
     category: "Drevená zimná záhrada",
     image:
       "/images/drevena-zimna-zahrada3.jpg",
   },
   {
+    location: "Rovinka",
     category: "Drevená zimná záhrada",
     image:
       "/images/drevena-zimna-zahrada4.jpg",
   },
   {
+    location: "Rovinka",
     category: "Drevená zimná záhrada",
     image:
       "/images/drevena-zimna-zahrada5.jpg",
   },
   // Ďalšie hliníkové pergoly prevzaté z woodsteel.sk
   {
+    location: "Ivanka pri Dunaji",
     category: "Hliníková pergola",
     image:
       "/images/hlinikova-pergola2.jpg",
   },
   {
+    location: "Neded",
     category: "Hliníková pergola",
     image:
       "/images/hlinikova-pergola3.jpg",
   },
   {
+    location: "Trenčín",
     category: "Hliníková pergola",
     image:
       "/images/hlinikova-pergola4.jpg",
   },
   {
+    location: "BA — Vrakuňa",
     category: "Hliníková pergola",
     image:
       "/images/hlinikova-pergola5.jpg",
   },
   // Prístrešky na auto — vlastné fotografie zákazníka
   {
-    category: "Prístrešok na auto",
-    image:
-      "/images/pristresok-na-auto-1.jpg",
-  },
-  {
+    location: "BA — Koliba",
     category: "Prístrešok na auto",
     image:
       "/images/pristresok-na-auto-2.jpg",
   },
   {
+    location: "Trenčianske Teplice",
     category: "Prístrešok na auto",
     image:
       "/images/pristresok-na-auto-3.jpg",
   },
   {
+    location: "Viničné",
     category: "Prístrešok na auto",
     image:
       "/images/pristresok-na-auto-4.jpg",
@@ -228,7 +229,7 @@ export const categories = [
 export const process = [
   { n: "01", title: "Dopyt", meta: "Do hodiny", description: "Zavoláte alebo napíšete." },
   { n: "02", title: "Obhliadka", meta: "Bezplatne", description: "Prídeme zamerať priestor." },
-  { n: "03", title: "Cenová ponuka", meta: "Do 48 hodín", description: "Ponuka aj s vizualizáciou." },
+  { n: "03", title: "Cenová ponuka", meta: "Do 48 hodín", description: "Cenová ponuka na mieru." },
   { n: "04", title: "Výroba", meta: "Vlastná dielňa", description: "Vyrábame na Slovensku." },
   { n: "05", title: "Montáž", meta: "Na kľúč", description: "Postavíme a odovzdáme." },
 ];

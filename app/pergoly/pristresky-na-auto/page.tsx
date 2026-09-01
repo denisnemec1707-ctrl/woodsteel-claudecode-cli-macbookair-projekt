@@ -4,7 +4,7 @@ import { ProductSubpage } from "@/components/ProductSubpage";
 export const metadata: Metadata = {
   title: "Prístrešky na auto - WoodSteel.sk",
   description:
-    "Prístrešky na auto na mieru — hliníkové aj drevené. Statický výpočet pre vašu lokalitu, odvodnenie skryté v konštrukcii, vlastná SK výroba.",
+    "Hliníkové prístrešky na auto na mieru — kotvené do domu alebo samostatne stojace. Odvodnenie skryté v konštrukcii, vlastná SK výroba.",
   alternates: { canonical: "https://woodsteel.sk/pergoly/pristresky-na-auto/" },
 };
 
@@ -27,14 +27,16 @@ export default function PristreskyNaAutoPage() {
       intro={{
         title: "Prístrešok, ktorý odolá snehu aj vetru",
         body:
-          "Každý prístrešok navrhujeme podľa snehovej oblasti a zaťaženia vetrom v mieste stavby — nie podľa katalógu. Hliníkové prevedenie je štíhle a bezúdržbové, drevené pôsobí prirodzene a lepšie sadne k starším domom.",
+          "Každý prístrešok navrhujeme podľa snehovej oblasti a zaťaženia vetrom v mieste stavby — nie podľa katalógu. Hliníkové prevedenie je štíhle a bezúdržbové — prístrešok môže byť kotvený do domu alebo samostatne stojaci v priestore.",
       }}
       features={[
-        "Hliníkové aj drevené prevedenie",
-        "Rozmery na mieru — pre jedno aj viac vozidiel",
-        "Konštrukcia dimenzovaná na miestne podmienky",
-        "Odvodnenie riešené priamo v konštrukcii",
-        "Povrchová úprava vo farbe podľa vzorkovníka",
+        "Kotvené do domu alebo samostatne stojace v priestore",
+        "Povrchová úprava hliníka komaxit",
+        "Príprava na neskoršie zasklenie",
+        "Integrované LED osvetlenie ako voliteľný doplnok",
+        "Možnosť osadenia tieniacej techniky (screenové rolety)",
+        "Integrovaný žľab v konštrukcii",
+        "Voľba základných a prémiových strešných krytín",
         "Záruka 5+ rokov",
       ]}
       realizationFilter={(c) => c.toLowerCase().includes("prístrešok") || c.toLowerCase().includes("carport")}

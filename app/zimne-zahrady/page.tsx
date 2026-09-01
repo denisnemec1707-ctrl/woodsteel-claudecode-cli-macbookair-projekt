@@ -31,25 +31,16 @@ const variants = [
     image:
       "/images/drevena-zimna-zahrada5.jpg",
   },
-  {
-    name: "Sezónna zimná záhrada",
-    tag: "Sezónna",
-    description:
-      "Cenovo dostupnejšia varianta s ľahšou konštrukciou — vynikajúca pre jar/leto/jeseň. V zime sa odporúča vykurovaná verzia.",
-    image:
-      "/images/zimna-zahrada-rovinka.jpeg",
-  },
 ];
 
 const features = [
-  "Izolačné dvojsklo s Ug ≤ 1.0",
+  "Zasklenie rámové / bezrámové",
   "Bezúdržbové hliníkové profily",
   "Posuvné sliding systémy",
+  "Možnosť osadenia tieniacej techniky (screenové rolety)",
   "Voliteľné kúrenie / klimatizácia",
-  "Plne automatizované tienenie",
   "5+ rokov záruka",
   "Vlastná výroba na Slovensku",
-  "Štatický posudok pre vašu lokalitu",
 ];
 
 export default function ZimneZahradyPage() {
@@ -61,9 +52,9 @@ export default function ZimneZahradyPage() {
         data={productSchema({
           name: "Zimné záhrady WoodSteel",
           description:
-            "Hliníkové alebo drevené zimné záhrady na mieru. Izolačné dvojsklo, sliding systémy. Vlastná SK výroba.",
+            "Hliníkové alebo drevené zimné záhrady na mieru. Zasklenie rámové aj bezrámové, sliding systémy. Vlastná SK výroba.",
           image:
-            "/images/zimna-zahrada-rovinka.jpeg",
+            "/images/zimna-zahrada-hero.jpeg",
           category: "Zimné záhrady",
         })}
       />
@@ -72,8 +63,8 @@ export default function ZimneZahradyPage() {
       <main className="flex-1">
         <section className="relative min-h-[80svh] flex items-end overflow-hidden">
           <Image
-            src="/images/zimna-zahrada-rovinka.jpeg"
-            alt="Zimná záhrada — Rovinka"
+            src="/images/zimna-zahrada-hero.jpeg"
+            alt="Hliníková zimná záhrada WoodSteel"
             fill
             priority
             sizes="100vw"
@@ -91,7 +82,7 @@ export default function ZimneZahradyPage() {
             </h1>
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">
               Plnohodnotná obytná zóna nezávislá od počasia. Hliník alebo drevo,
-              izolačné dvojsklo, sliding systémy s plynulým otváraním.
+              zasklenie rámové aj bezrámové, sliding systémy s plynulým otváraním.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
               <Link href="#variants" className="inline-flex justify-center items-center gap-2 px-7 py-4 bg-gold hover:bg-gold-hover text-brown hover:text-white font-semibold rounded-full transition-all shadow-[0_8px_24px_rgba(203,171,88,0.4)] hover:-translate-y-0.5">
@@ -106,7 +97,7 @@ export default function ZimneZahradyPage() {
 
         <section id="variants" className="py-24 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
-            <SectionHeader eyebrow="Varianty" title="Tri prevedenia, jeden štandard kvality" subtitle="Vyberte si materiál a režim používania — technické riešenie aj montáž zostávajú u nás." />
+            <SectionHeader eyebrow="Varianty" title="Dve prevedenia, jeden štandard kvality" subtitle="Vyberte si materiál a režim používania — technické riešenie aj montáž zostávajú u nás." />
             <div className="mt-16 space-y-16 lg:space-y-24">
               {variants.map((v, i) => (
                 <div key={v.name} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>

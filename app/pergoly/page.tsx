@@ -46,9 +46,8 @@ const features = [
   "Vlastná výroba na Slovensku",
   "5+ rokov záruka",
   "Integrované LED osvetlenie ako voliteľný doplnok",
-  "Bočné screen rolety",
+  "Možnosť osadenia tieniacej techniky (screenové rolety)",
   "Odtokový systém v stĺpoch",
-  "Statické posúdenie pre vašu lokalitu",
 ];
 
 export default function PergolyPage() {
@@ -62,7 +61,7 @@ export default function PergolyPage() {
         data={productSchema({
           name: "Pergoly WoodSteel",
           description:
-            "Hliníkové a drevené pergoly alebo prístrešky na auto. Vlastná SK výroba s 5+ rokmi záruka.",
+            "Hliníkové a drevené pergoly a hliníkové prístrešky na auto. Vlastná SK výroba s 5+ rokmi záruka.",
           image:
             "/images/hlinikova-pergola-trencin.jpeg",
           category: "Pergoly",
@@ -93,7 +92,7 @@ export default function PergolyPage() {
             </h1>
             {/* Price badge */}
             <p className="mt-6 text-cream/90 text-lg max-w-2xl leading-relaxed">
-              Hliníkové a drevené pergoly alebo prístrešky na auto.
+              Hliníkové a drevené pergoly a hliníkové prístrešky na auto.
               Každú pergolu navrhujeme presne pre váš dom — od merania až po finálnu montáž.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
