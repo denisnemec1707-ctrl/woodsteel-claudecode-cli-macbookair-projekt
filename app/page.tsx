@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TrustStrip } from "@/components/TrustStrip";
@@ -15,6 +16,10 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Faq } from "@/components/Faq";
 import { generalFaqs } from "@/lib/faqs";
 import { JsonLd, localBusinessSchema, faqSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://woodsteel.sk/" },
+};
 
 export default function HomePage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { BacklitSign } from "@/components/BacklitSign";
 import { Footer } from "@/components/Footer";
@@ -10,6 +11,13 @@ import { CounterStat } from "@/components/CounterStat";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
 import { stats } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "O nás - WoodSteel.sk",
+  description:
+    "Vlastná slovenská výroba a montáž od roku 2021. Showroom v Rovinke a tím, ktorý vedie zákazku od návrhu po odovzdanie.",
+  alternates: { canonical: "https://woodsteel.sk/o-nas/" },
+};
 
 const values = [
   {

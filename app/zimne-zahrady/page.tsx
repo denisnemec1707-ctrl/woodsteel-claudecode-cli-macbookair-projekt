@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
@@ -13,6 +14,13 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { realizations } from "@/lib/data";
 import { zimnaZahradaFaqs } from "@/lib/faqs";
 import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Zimné záhrady - WoodSteel.sk",
+  description:
+    "Drevené a hliníkové zimné záhrady na mieru. Rámové aj bezrámové zasklenie, vlastná SK výroba a montáž.",
+  alternates: { canonical: "https://woodsteel.sk/zimne-zahrady/" },
+};
 
 const variants = [
   {

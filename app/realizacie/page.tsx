@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
@@ -6,6 +7,13 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FinalCTA } from "@/components/FinalCTA";
 import { realizations } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Realizácie - WoodSteel.sk",
+  description:
+    "Fotografie dokončených pergol, zimných záhrad, zasklení a prístreškov na auto z realizácií po celom Slovensku.",
+  alternates: { canonical: "https://woodsteel.sk/realizacie/" },
+};
 
 export default function RealizaciePage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -6,6 +7,13 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { generalFaqs, pergolaFaqs, zimnaZahradaFaqs, zasklenieFaqs } from "@/lib/faqs";
 import { JsonLd, faqSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Časté otázky - WoodSteel.sk",
+  description:
+    "Odpovede na najčastejšie otázky o pergolách, zimných záhradách a zasklení terás — termíny, záruky aj priebeh montáže.",
+  alternates: { canonical: "https://woodsteel.sk/faq/" },
+};
 
 export default function FaqPage() {
   const all = [...generalFaqs, ...pergolaFaqs, ...zimnaZahradaFaqs, ...zasklenieFaqs];

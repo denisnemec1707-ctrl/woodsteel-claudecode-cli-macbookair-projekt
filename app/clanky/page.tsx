@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -5,6 +6,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { blogPosts, formatDate } from "@/lib/blog";
+
+export const metadata: Metadata = {
+  title: "Články - WoodSteel.sk",
+  description:
+    "Rady a návody k pergolám, zimným záhradám a zasklievaniu terás — od kotvenia konštrukcie po údržbu.",
+  alternates: { canonical: "https://woodsteel.sk/clanky/" },
+};
 
 export default function ClankyPage() {
   const [featured, ...rest] = blogPosts;

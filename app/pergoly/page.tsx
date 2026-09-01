@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
@@ -13,6 +14,13 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { realizations } from "@/lib/data";
 import { pergolaFaqs } from "@/lib/faqs";
 import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Pergoly - WoodSteel.sk",
+  description:
+    "Drevené a hliníkové pergoly na mieru — návrh, vlastná SK výroba aj montáž. Prístrešky na auto a príprava na neskoršie zasklenie.",
+  alternates: { canonical: "https://woodsteel.sk/pergoly/" },
+};
 
 const variants = [
   {

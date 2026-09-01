@@ -6,6 +6,16 @@ import { Cookie, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "ws-consent-v1";
+const REOPEN_EVENT = "ws-open-cookie-settings";
+
+/**
+ * Znovu otvorí lištu s nastavením cookies. GDPR vyžaduje, aby sa dal súhlas
+ * odvolať rovnako ľahko, ako bol udelený — bez tohto by ho po prvej voľbe
+ * už nebolo ako zmeniť.
+ */
+export function openCookieSettings() {
+  window.dispatchEvent(new Event(REOPEN_EVENT));
+}
 
 type Consent = {
   necessary: true; // always granted
@@ -57,6 +67,15 @@ export function CookieConsent() {
     } catch {
       setOpen(true);
     }
+  }, []);
+
+  useEffect(() => {
+    function reopen() {
+      setShowDetails(true);
+      setOpen(true);
+    }
+    window.addEventListener(REOPEN_EVENT, reopen);
+    return () => window.removeEventListener(REOPEN_EVENT, reopen);
   }, []);
 
   function commit(next: Consent) {

@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Zap, Clock, Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { InquiryForm } from "@/components/InquiryForm";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+
+export const metadata: Metadata = {
+  title: "Akčná cenová ponuka - WoodSteel.sk",
+  description:
+    "Vyžiadajte si nezáväznú cenovú ponuku do 24 hodín. Bezplatná obhliadka a zameranie priamo u vás.",
+  alternates: { canonical: "https://woodsteel.sk/akcna-cenova-ponuka/" },
+};
 
 const promises = [
   "Reagujeme do hodiny v pracovných dňoch",

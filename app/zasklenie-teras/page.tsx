@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
@@ -11,6 +12,13 @@ import { ProductStickyCTA } from "@/components/ProductStickyCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { zasklenieFaqs } from "@/lib/faqs";
 import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Zasklenie terás - WoodSteel.sk",
+  description:
+    "Rámové a bezrámové zasklenie terás a balkónov. Chráni pred vetrom a dažďom, terasu využijete aj mimo sezóny.",
+  alternates: { canonical: "https://woodsteel.sk/zasklenie-teras/" },
+};
 
 // Systémy zasklenia — texty a fotografie prevzaté z woodsteel.sk
 const systems = [

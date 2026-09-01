@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -5,6 +6,13 @@ import { Footer } from "@/components/Footer";
 import { InquiryForm } from "@/components/InquiryForm";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MapEmbed } from "@/components/MapEmbed";
+
+export const metadata: Metadata = {
+  title: "Kontakt - WoodSteel.sk",
+  description:
+    "Napíšte nám alebo zavolajte a dohodnite si bezplatnú obhliadku. Showroom v Rovinke, pôsobíme po celom Slovensku.",
+  alternates: { canonical: "https://woodsteel.sk/kontakt/" },
+};
 
 export default function KontaktPage() {
   return (
