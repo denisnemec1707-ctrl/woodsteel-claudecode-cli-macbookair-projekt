@@ -75,8 +75,25 @@ const CONSULT = ["Áno, mám záujem", "Zatiaľ nie"];
 /** Polia, ktoré tvoria ukazovateľ vyplnenosti */
 const REQUIRED = ["name", "phone", "email"];
 
+/** Marketingové parametre z adresy — chodia do Sheetu spolu s dopytom */
+function trackingParams() {
+  if (typeof window === "undefined") return {};
+  const q = new URLSearchParams(window.location.search);
+  return {
+    page: window.location.pathname,
+    utmSource: q.get("utm_source") ?? "",
+    utmMedium: q.get("utm_medium") ?? "",
+    utmCampaign: q.get("utm_campaign") ?? "",
+    utmTerm: q.get("utm_term") ?? "",
+    utmContent: q.get("utm_content") ?? "",
+    gclid: q.get("gclid") ?? "",
+    referrer: document.referrer,
+  };
+}
+
 export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const [error, setError] = useState("");
   const [product, setProduct] = useState(defaultProduct);
   const [timing, setTiming] = useState("");
   const [consult, setConsult] = useState("");
@@ -96,8 +113,42 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-    // Simulate network — in production this would POST to /api/inquiry or contact-form-7
-    await new Promise((r) => setTimeout(r, 1400));
+    setError("");
+
+    const data = new FormData(e.currentTarget);
+    const text = (key: string) => String(data.get(key) ?? "").trim();
+
+    try {
+      // Lomka na konci je nutná — next.config.ts má trailingSlash: true,
+      // bez nej by POST prešiel cez zbytočný 308 redirect.
+      const response = await fetch("/api/lead/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          product: text("product"),
+          timing: text("timing"),
+          consult: text("consult"),
+          city: text("city"),
+          psc: text("psc"),
+          message: text("message"),
+          name: text("name"),
+          phone: text("phone"),
+          email: text("email"),
+          consent: data.get("consent") !== null,
+          website: text("website"),
+          ...trackingParams(),
+        }),
+      });
+
+      if (!response.ok) throw new Error(`lead_${response.status}`);
+    } catch {
+      setStatus("idle");
+      setError(
+        "Odoslanie sa nepodarilo. Skúste to prosím znova, alebo nám zavolajte na +421 904 473 111."
+      );
+      return;
+    }
+
     setStatus("success");
     setCelebrate(true);
     window.setTimeout(() => setCelebrate(false), 2800);
@@ -170,6 +221,16 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
       onChange={(e) => recount(e.currentTarget)}
       className={shell}
     >
+      {/* Pasca na botov — človek toto pole nikdy nevidí, a teda ani nevyplní */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
+
       {/* Ukazovateľ vyplnenosti na hornej hrane */}
       <span aria-hidden className="absolute inset-x-0 top-0 h-0.5 bg-brown/[0.06]" />
       <span
@@ -354,6 +415,15 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
           </label>
         </div>
       </div>
+
+      {error && (
+        <p
+          role="alert"
+          className="mt-7 rounded-xl bg-gold/[0.08] px-4 py-3 text-sm text-brown ring-1 ring-gold/30"
+        >
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"
