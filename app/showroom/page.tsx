@@ -64,7 +64,7 @@ export default function ShowroomPage() {
         <section className="relative min-h-[68svh] flex items-end overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/images/hero-uvod.jpg"
+              src="/images/showroom-vystavna-zz-exterier.jpeg"
               alt="Výstavná zimná záhrada WoodSteel v Rovinke"
               fill
               priority
@@ -147,7 +147,7 @@ export default function ShowroomPage() {
             <Reveal delay={120} className="relative">
               <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden bg-cream shadow-[0_24px_60px_rgba(63,34,17,0.16)] group">
                 <Image
-                  src="/images/showroom-rovinka.jpeg"
+                  src="/images/showroom-rovinka-interier.jpeg"
                   alt="Interiér výstavnej zimnej záhrady v showroome Rovinka"
                   fill
                   sizes="(min-width:1024px) 45vw, 100vw"

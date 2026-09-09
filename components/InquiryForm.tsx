@@ -57,6 +57,15 @@ const PRODUCTS = [
     ),
   },
   {
+    name: "Obhliadka showroomu",
+    icon: (
+      <svg {...glyph}>
+        <path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </svg>
+    ),
+  },
+  {
     name: "Iné",
     icon: (
       <svg {...glyph}>
@@ -269,7 +278,7 @@ export function InquiryForm({ variant = "card", defaultProduct = "" }: Props) {
         <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-mutedbrand mb-3">
           O aký produkt máte záujem?
         </span>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
           {PRODUCTS.map((p) => {
             const selected = product === p.name;
             return (

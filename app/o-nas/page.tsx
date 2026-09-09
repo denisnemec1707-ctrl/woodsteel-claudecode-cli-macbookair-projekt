@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/Header";
-import { BacklitSign } from "@/components/BacklitSign";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -48,8 +48,16 @@ export default function ONasPage() {
       <Header overlay />
       <main className="flex-1">
         <section className="relative min-h-[60svh] flex items-end overflow-hidden">
-          <BacklitSign />
-          {/* Spodok stmavíme kvôli čitateľnosti nadpisu, hore necháme svietiť nápis */}
+          {/* Nočná osvetlená zimná záhrada — pozadie celej hero sekcie */}
+          <Image
+            src="/images/zimna-zahrada-nocna-osvetlena.jpeg"
+            alt="Osvetlená zimná záhrada WoodSteel v noci"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Spodok stmavíme kvôli čitateľnosti nadpisu */}
           <div className="absolute inset-0 z-[3] bg-gradient-to-t from-brown/95 via-brown/25 to-transparent" />
           <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-16 pt-32">
             <h1 className="text-display-1 font-extrabold text-white max-w-3xl">

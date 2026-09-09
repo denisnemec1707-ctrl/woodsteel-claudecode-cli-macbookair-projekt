@@ -48,7 +48,7 @@ const systems = [
     claim: "Zasklenie terasy ochráni proti vetru a dažďu.",
     description:
       "Bezrámový posuvný systém predstavuje dizajnové riešenie pre náročnejších zákazníkov, ktorí hľadajú moderný a minimalistický vzhľad bez viditeľných rámov. Využíva bezpečnostné jednosklo, ktoré umožňuje zaskliť priestory až do výšky 3 metrov. Poskytuje nielen spoľahlivú ochranu pred vetrom, dažďom, snehom a nečistotami, ale aj luxusný, prémiový vzhľad.",
-    image: "/images/zasklenie-bezramovy-system.jpg",
+    image: "/images/zasklenie-bezramove-hnede.jpg",
     features: [
       "zaisťuje ničím nerušený výhľad do záhrady",
       "prekážka proti násilnému vniknutiu",
