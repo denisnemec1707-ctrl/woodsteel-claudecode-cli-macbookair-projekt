@@ -22,7 +22,7 @@ export const generalFaqs = [
   {
     question: "Akým spôsobom sa platí?",
     answer:
-      "Bankovým prevodom alebo v hotovosti. Cena sa uhrádza v zálohách naviazaných na priebeh zákazky — štandardne 20 % po podpise zmluvy, 70 % pred dodaním a 10 % po finálnej montáži. Pri špecifických projektoch vieme splátkový kalendár nastaviť individuálne.",
+      "Štandardne sa platí na faktúru s DPH alebo s prenosom DPH, podľa dohodnutých platobných podmienok z cenovej ponuky / zmluvy o dielo. Štandardné platobné podmienky sú: 70 % zálohová platba — po jej úhrade sa začína proces realizácie a plynie termín dodania; 20 % druhá platba — po začatí stavby diela (1. stavebný deň); 10 % tretia platba — po kompletnom dokončení diela a podpise preberacieho protokolu.",
   },
 ];
 
