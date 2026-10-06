@@ -17,7 +17,7 @@ export const generalFaqs = [
   {
     question: "Ako prebieha cenová ponuka?",
     answer:
-      "Vyplníte formulár alebo zavoláte. Náš obchodník sa vám ozve do hodiny v pracovných dňoch, dohodne si bezplatnú obhliadku u vás doma a do 24-48 hodín máte na e-maile ponuku + vizualizáciu.",
+      "Vyplníte formulár a ozve sa vám naša asistentka. Ak máte záujem o osobnú obhliadku, obchodník sa vám ozve a dohodne si s vami termín; ak chcete len cenovú ponuku, odošleme vám ju e-mailom podľa zadaných parametrov. Štandardne sa tak deje v priebehu 48 hodín od odoslania dopytu.",
   },
   {
     question: "Akým spôsobom sa platí?",
