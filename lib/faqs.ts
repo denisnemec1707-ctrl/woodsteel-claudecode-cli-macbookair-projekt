@@ -54,7 +54,7 @@ export const zimnaZahradaFaqs = [
   {
     question: "Aká je tepelná izolácia?",
     answer:
-      "Pri celoročných zimných záhradách používame izolačné dvojsklo s Ug do 1.0 W/m²K, alebo trojsklo s Ug do 0.6. Hliníkové profily majú prerušený tepelný most. Záhrada sa teda nelíši od interiéru.",
+      "Tepelná izolácia zimnej záhrady závisí od zvolených materiálov. Zimnú záhradu vám vieme nakonfigurovať ako sezónne riešenie, ale aj ako plnohodnotné rozšírenie obytného priestoru.",
   },
   {
     question: "Potrebujem kúrenie?",
