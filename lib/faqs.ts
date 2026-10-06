@@ -78,7 +78,7 @@ export const zasklenieFaqs = [
   {
     question: "Sú posuvné panely bezpečné?",
     answer:
-      "Áno — používame kalené bezpečnostné sklo s hrúbkou 8-12 mm, vodítka s mäkkým dorazom a magnetické zaisťovanie. Systém je odolný proti vlámaniu vyšší než štandardné dvere.",
+      "Áno, všetky naše zasklenia sú vyrábané s dôrazom na kvalitu a bezpečnosť. Ako výplň je možné použiť aj bezpečnostné sklo. Zamykanie funguje pomocou okenných kľučiek, prípadne aj FAB zámkom.",
   },
   {
     question: "Ako sa čistí sklo?",
