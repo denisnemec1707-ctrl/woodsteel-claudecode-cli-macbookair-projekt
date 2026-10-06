@@ -7,7 +7,7 @@ export const generalFaqs = [
   {
     question: "Aké záruky poskytujete?",
     answer:
-      "Na nosnú konštrukciu poskytujeme záruku 5 rokov, na povrchovú úpravu až 7 rokov a na elektrické a motorické komponenty 2 roky.",
+      "Na naše diela poskytujeme záruku až 7 rokov. Špecifikáciu záručných lehôt nájdete v zmluve o dielo.",
   },
   {
     question: "Potrebujem stavebné povolenie?",
