@@ -45,7 +45,7 @@ export const pergolaFaqs = [
   {
     question: "Aké doplnky odporúčate?",
     answer:
-      "Najobľúbenejšie sú: LED osvetlenie integrované do stĺpov, screen rolety po stranách (proti vetru a hmyzu), infražiariče pre celoročné využitie, motorické ovládanie cez aplikáciu.",
+      "Najobľúbenejšie doplnky sú: integrované LED osvetlenie do krovu s diaľkovým ovládaním a ZIP screenové rolety ako tieniaca technika. Oba doplnky sú v dizajnovom a modernom prevedení.",
   },
   ...generalFaqs.slice(0, 3),
 ];
