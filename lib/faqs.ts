@@ -62,11 +62,6 @@ export const zimnaZahradaFaqs = [
       "Pre celoročné používanie áno — najčastejšie podlahové kúrenie alebo klimatizácia s vykurovacím režimom. Vďaka dobrému zaskleniu sú prevádzkové náklady veľmi nízke (porovnateľné s normálnou izbou).",
   },
   {
-    question: "Aký výhľad zostane?",
-    answer:
-      "Naše profily sú extrémne štíhle (od 50 mm), takže výhľad je takmer rovnaký ako v terase. Pri posuvných systémoch sa celá stena dá otvoriť — v lete tak máte plnohodnotnú terasu.",
-  },
-  {
     question: "Kedy je najlepší čas na realizáciu?",
     answer:
       "Optimálne na jar (apríl-jún) keď sú dobré podmienky pre stavebné práce. Pre rozhodovanie a obhliadku odporúčame jeseň alebo zimu — máte čas premyslieť detaily.",
