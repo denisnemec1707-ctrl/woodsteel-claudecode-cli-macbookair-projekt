@@ -73,7 +73,7 @@ export const zasklenieFaqs = [
   {
     question: "Aký je rozdiel medzi rámovým a bezrámovým zasklením?",
     answer:
-      "Bezrámové sklo má len úzke kovové úchyty hore a dole, vyzerá vizuálne čisto a maximalizuje výhľad. Rámové systémy sú robustnejšie a lepšie izolujú, sú o ~20% lacnejšie.",
+      "Bezrámové sklo má len úzke kovové úchyty hore a dole, vyzerá vizuálne čisto a maximalizuje výhľad. Rámové systémy sú robustnejšie a lepšie izolujú.",
   },
   {
     question: "Sú posuvné panely bezpečné?",
