@@ -64,7 +64,7 @@ export const zimnaZahradaFaqs = [
   {
     question: "Kedy je najlepší čas na realizáciu?",
     answer:
-      "Optimálne na jar (apríl-jún) keď sú dobré podmienky pre stavebné práce. Pre rozhodovanie a obhliadku odporúčame jeseň alebo zimu — máte čas premyslieť detaily.",
+      "Ideálne od jari do jesene. Montujeme však aj počas zimných mesiacov, samozrejme pri dodržaní odporúčaných technologických postupov.",
   },
   ...generalFaqs.slice(0, 3),
 ];
