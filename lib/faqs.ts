@@ -17,7 +17,7 @@ export const generalFaqs = [
   {
     question: "Ako prebieha cenová ponuka?",
     answer:
-      "Vyplníte formulár a ozve sa vám naša asistentka. Ak máte záujem o osobnú obhliadku, obchodník sa vám ozve a dohodne si s vami termín; ak chcete len cenovú ponuku, odošleme vám ju e-mailom podľa zadaných parametrov. Štandardne sa tak deje v priebehu 48 hodín od odoslania dopytu.",
+      "Vyplníte formulár a ozve sa Vám naša asistentka. Ak máte záujem o osobnú obhliadku, obchodník sa Vám ozve a dohodne si s Vami termín; ak chcete len cenovú ponuku, odošleme Vám ju e-mailom podľa zadaných parametrov. Štandardne sa tak deje v priebehu 48 hodín od odoslania dopytu.",
   },
   {
     question: "Akým spôsobom sa platí?",
@@ -54,7 +54,7 @@ export const zimnaZahradaFaqs = [
   {
     question: "Aká je tepelná izolácia?",
     answer:
-      "Tepelná izolácia zimnej záhrady závisí od zvolených materiálov. Zimnú záhradu vám vieme nakonfigurovať ako sezónne riešenie, ale aj ako plnohodnotné rozšírenie obytného priestoru.",
+      "Tepelná izolácia zimnej záhrady závisí od zvolených materiálov. Zimnú záhradu Vám vieme nakonfigurovať ako sezónne riešenie, ale aj ako plnohodnotné rozšírenie obytného priestoru.",
   },
   {
     question: "Potrebujem kúrenie?",
