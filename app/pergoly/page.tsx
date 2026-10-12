@@ -10,7 +10,6 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Faq } from "@/components/Faq";
 import { ProductStickyCTA } from "@/components/ProductStickyCTA";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { realizations } from "@/lib/data";
 import { pergolaFaqs } from "@/lib/faqs";
 import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
@@ -232,7 +231,6 @@ export default function PergolyPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
       <ProductStickyCTA productName="Pergola" />
     </>
   );

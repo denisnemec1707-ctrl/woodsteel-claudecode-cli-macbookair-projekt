@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FileText, Download, Archive } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CatalogDownload } from "@/components/CatalogDownload";
 
 export const metadata: Metadata = {
@@ -101,7 +100,6 @@ export default function NaStiahnutiePage() {
         <CatalogDownload />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

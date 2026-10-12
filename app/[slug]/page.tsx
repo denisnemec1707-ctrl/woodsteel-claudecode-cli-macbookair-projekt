@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { ArrowLeft, Calendar, ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FinalCTA } from "@/components/FinalCTA";
 import { ArticleBody } from "@/components/ArticleBody";
 import { blogPosts, getBlogPost, formatDate } from "@/lib/blog";
@@ -151,7 +150,6 @@ export default async function ArticleAtRoot({
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

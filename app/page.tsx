@@ -11,7 +11,6 @@ import { InstagramFeed } from "@/components/InstagramFeed";
 import { CatalogDownload } from "@/components/CatalogDownload";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Faq } from "@/components/Faq";
 import { generalFaqs } from "@/lib/faqs";
@@ -41,7 +40,6 @@ export default function HomePage() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
       <PromoBanner />
     </>
   );

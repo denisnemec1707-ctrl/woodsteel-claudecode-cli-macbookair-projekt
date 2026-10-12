@@ -9,7 +9,6 @@ import { Process } from "@/components/Process";
 import { Reviews } from "@/components/Reviews";
 import { FinalCTA } from "@/components/FinalCTA";
 import { ProductStickyCTA } from "@/components/ProductStickyCTA";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { zasklenieFaqs } from "@/lib/faqs";
 import { JsonLd, productSchema, faqSchema } from "@/lib/schema";
 
@@ -171,7 +170,6 @@ export default function ZasklenieTerasPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
       <ProductStickyCTA productName="Zasklenie terás" />
     </>
   );

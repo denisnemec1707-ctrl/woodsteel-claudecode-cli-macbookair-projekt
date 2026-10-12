@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { blogPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -106,7 +105,6 @@ export default function ClankyPage() {
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

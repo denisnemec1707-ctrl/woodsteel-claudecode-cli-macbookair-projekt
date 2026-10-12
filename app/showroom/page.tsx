@@ -5,7 +5,6 @@ import { ArrowDown, Phone } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { ShowroomBooking } from "@/components/ShowroomBooking";
 import { Reveal } from "@/components/Reveal";
@@ -237,7 +236,6 @@ export default function ShowroomPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

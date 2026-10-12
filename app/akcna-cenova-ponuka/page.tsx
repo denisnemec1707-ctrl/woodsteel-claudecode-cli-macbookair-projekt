@@ -4,7 +4,6 @@ import { Phone, Zap, Clock, Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { InquiryForm } from "@/components/InquiryForm";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Akčná cenová ponuka - WoodSteel.sk",
@@ -100,7 +99,6 @@ export default function CenovaPonukaPage() {
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Faq } from "@/components/Faq";
 import { FinalCTA } from "@/components/FinalCTA";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { generalFaqs, pergolaFaqs, zimnaZahradaFaqs, zasklenieFaqs } from "@/lib/faqs";
 import { JsonLd, faqSchema } from "@/lib/schema";
 
@@ -52,7 +51,6 @@ export default function FaqPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

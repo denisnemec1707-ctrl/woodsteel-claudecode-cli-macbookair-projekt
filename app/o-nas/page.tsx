@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Team } from "@/components/Team";
 import { CoverageMap } from "@/components/CoverageMap";
@@ -163,7 +162,6 @@ export default function ONasPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

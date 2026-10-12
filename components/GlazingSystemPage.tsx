@@ -4,7 +4,6 @@ import { ArrowRight, Check, Phone } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ProductStickyCTA } from "@/components/ProductStickyCTA";
 import { Reveal } from "@/components/Reveal";
 
@@ -102,7 +101,6 @@ export function GlazingSystemPage({ tag, name, claim, description, features, ima
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
       <ProductStickyCTA productName={name} />
     </>
   );

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FinalCTA } from "@/components/FinalCTA";
 import { realizations } from "@/lib/data";
 
@@ -72,7 +71,6 @@ export function RealizationsSubpage({ title, subtitle, filter }: Props) {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }
