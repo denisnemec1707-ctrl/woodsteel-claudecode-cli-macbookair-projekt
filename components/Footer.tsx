@@ -105,9 +105,6 @@ export function Footer() {
             <Link href="/ochrana-osobnych-udajov" className="inline-block py-2 hover:text-gold transition-colors">Ochrana osobných údajov</Link>
             <Link href="/cookies" className="inline-block py-2 hover:text-gold transition-colors">Cookies</Link>
           </div>
-          <div className="font-mono text-[11px] tracking-wider px-2.5 py-1 rounded-md bg-white/8 text-gold/80">
-            build: claude-code · v1
-          </div>
         </div>
       </div>
     </footer>
