@@ -37,8 +37,44 @@ export const realizations: {
   category: string;
   image: string;
 }[] = [
+  // Nové realizácie — doplnené z podkladov „SK WEB", preto sú hore.
   {
-    location: "BA — Vrakuňa",
+    location: "Kalvária",
+    category: "Drevená zimná záhrada",
+    image: "/images/zz-drevena-ba-kalvaria.jpeg",
+  },
+  {
+    location: "Rovinka",
+    category: "Zimná záhrada",
+    image: "/images/zz-rovinka-2.jpeg",
+  },
+  {
+    location: "Jarok pri Nitre",
+    category: "Zimná záhrada",
+    image: "/images/zz-jarok-pri-nitre.jpeg",
+  },
+  {
+    location: "Nové Mesto nad Váhom",
+    category: "Zimná záhrada",
+    image: "/images/zz-nove-mesto-nad-vahom.jpeg",
+  },
+  {
+    location: "Podunajské Biskupice",
+    category: "Zimná záhrada",
+    image: "/images/zz-ba-podunajske-biskupice-2.jpeg",
+  },
+  {
+    location: "Wolfsthal — Rakúsko",
+    category: "Zimná záhrada",
+    image: "/images/zz-wolfsthal.jpeg",
+  },
+  {
+    location: "Rajka",
+    category: "Zimná záhrada",
+    image: "/images/zz-rajka.jpeg",
+  },
+  {
+    location: "Vrakuňa",
     category: "Hliníková pergola",
     image:
       "/images/hlinikova-pergola-BA-Vrakuna.jpeg",
@@ -80,7 +116,7 @@ export const realizations: {
       "/images/zimna-zahrada-kittse.jpeg",
   },
   {
-    location: "BA — Podunajské Biskupice",
+    location: "Podunajské Biskupice",
     category: "Zimná záhrada",
     image:
       "/images/zimna-zahrada-podunajske-biskupice.jpeg",
@@ -137,14 +173,14 @@ export const realizations: {
       "/images/hlinikova-pergola4.jpg",
   },
   {
-    location: "BA — Vrakuňa",
+    location: "Vrakuňa",
     category: "Hliníková pergola",
     image:
       "/images/hlinikova-pergola5.jpg",
   },
   // Prístrešky na auto — vlastné fotografie zákazníka
   {
-    location: "BA — Koliba",
+    location: "Koliba",
     category: "Prístrešok na auto",
     image:
       "/images/pristresok-na-auto-2.jpg",
