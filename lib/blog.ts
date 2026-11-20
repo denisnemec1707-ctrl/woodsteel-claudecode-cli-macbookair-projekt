@@ -7,6 +7,7 @@ import { clanokTienenieHtml } from "./clanok-tienenie";
 import { clanokVizualizaciaHtml } from "./clanok-vizualizacia";
 import { clanokCenaHtml } from "./clanok-cena";
 import { clanokPristresokHtml } from "./clanok-pristresok";
+import { clanokJesenHtml } from "./clanok-jesen";
 
 /** Autori článkov — meno, rola a orezaná guľatá fotka. */
 export const autori = {
@@ -157,6 +158,19 @@ export const blogPosts: BlogPost[] = [
       "Zasklenie je pri zimnej záhrade najdôležitejšie a prakticky nevratné rozhodnutie. Jednosklo zastaví dážď a vietor, izolačné dvojsklo (Ug okolo 1,1) je rozumný štandard pre využívanie od jari do jesene aj s prikurovaním, trojsklo (Ug okolo 0,6) dáva zmysel len pri napojení na vykurovanie domu — je ťažšie a konštrukcia naň musí byť dimenzovaná od začiatku. Do strechy patrí vrstvené bezpečnostné sklo, pretože pri rozbití zostanú črepy na fólii. Proti letnému prehrievaniu pomáha reflexné sklo v kombinácii s vonkajším tienením. A hrúbku skla aj profilov určuje snehová oblasť.",
     category: "Zimné záhrady",
     contentHtml: clanokSkloHtml,
+  }),
+  enrich({
+    slug: "terasa-a-zimna-zahrada-na-jesen-a-v-zime",
+    title: "Terasa, ktorú používate aj v novembri",
+    date: "2026-11-15",
+    image: "/images/zimni-zahrada-podzim.jpg",
+    author: "branislav-kmec",
+    excerpt:
+      "V júli sa dá sedieť vonku aj bez konštrukcie. V novembri je rozdiel najväčší — ak máte vyriešený vietor, teplo a svetlo. Čo sa musí naplánovať vopred a čo sa dá doplniť.",
+    summary:
+      "Zastrešenú terasu robí použiteľnou v chladnej polovici roka päť vecí: zastrešenie s dostatočným presahom, bočná ochrana proti vetru (screen alebo zasklenie), infražiarič, ktorý ohrieva ľudí a nie vzduch, teplé stmievateľné osvetlenie a funkčný odvod vody. Zastrešenie a odtok sa dodatočne nerobia, vykurovanie a svetlo sa doplniť dajú — ak sa na ne pri návrhu pripraví vedenie. Na jeseň stojí hodinu práce vyčistiť žľaby, vyskúšať odtok hadicou, vytiahnuť screeny nahor a umyť sklo. A ak chcete sedieť pod novou konštrukciou v máji, dopyt patrí do novembra, nie do apríla.",
+    category: "Všeobecné",
+    contentHtml: clanokJesenHtml,
   }),
   enrich({
     slug: "ako-spravne-kotvit-pergolu-do-fasady-domu",
