@@ -114,7 +114,9 @@ export async function POST(request: Request) {
       farba ? `AI vizualizácia — farba ${farba.nazev} (${farba.kod})` : "AI vizualizácia"
     ),
     meno: safeForSheet(`${body.jmeno!.trim()} ${body.prijmeni!.trim()}`),
-    telefon: safeForSheet(normalizePhone(body.telefon!)),
+    // Bez safeForSheet — to odstraňuje vedúce „+" a medzinárodná predvoľba
+    // je to jediné, čo tu na začiatku môže stáť.
+    telefon: normalizePhone(body.telefon!),
     email: safeForSheet(body.email),
     suhlas: "áno",
     utm_source: "",
