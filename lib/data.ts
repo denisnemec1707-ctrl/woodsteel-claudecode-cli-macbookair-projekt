@@ -324,4 +324,5 @@ export const navigation = [
   { label: "O nás", href: "/o-nas" },
   { label: "FAQ", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },
+  { label: "Vizualizácia", href: "/vizualizacia" },
 ];
