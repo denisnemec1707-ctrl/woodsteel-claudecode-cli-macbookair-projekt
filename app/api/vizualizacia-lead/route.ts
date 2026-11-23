@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { checkBotId } from "botid/server";
 import { FARBY, KRAJE, PRODUKTY } from "@/lib/vizualizace";
+import { vydajVstupenku } from "@/lib/vizu-ochrana";
 
 /**
  * Kontaktné údaje, ktorými si návštevník odomyká vygenerovanú vizualizáciu.
@@ -8,6 +10,11 @@ import { FARBY, KRAJE, PRODUKTY } from "@/lib/vizualizace";
  * „WOODSTEEL WEBLEADS → Woodsteel leads (hárok leads z webstranky .sk)".
  * Kľúče aj ich tvar sú preto zhodné s `/api/lead`, inak by scenár riadok
  * nenamapoval. Vizualizáciu v tabuľke rozlíšiš podľa stránky a poznámky.
+ *
+ * Kontakt sa posiela PRED generovaním: odpoveď nesie `vstupenka` (podpísaná,
+ * platí pár hodín), bez ktorej `/api/vizualizacia/` nič nevygeneruje — viď
+ * lib/vizu-ochrana.ts. Vstupenku vydáme aj keď zlyhá Make (lead je potom
+ * v logu Vercelu), aby návštevník kvôli našej chybe neprišiel o vizualizáciu.
  *
  * Pozor: `trailingSlash: true` v next.config.ts platí aj na API — klient musí
  * volať "/api/vizualizacia-lead/" so lomkou, inak dostane 308 redirect.
@@ -66,6 +73,14 @@ function bratislavaTimestamp(): string {
 }
 
 export async function POST(request: Request) {
+  const overenie = await checkBotId();
+  if (overenie.isBot) {
+    return NextResponse.json(
+      { error: "Požiadavku sa nepodarilo overiť. Obnovte prosím stránku a skúste to znova." },
+      { status: 403 }
+    );
+  }
+
   let body: VizuLeadPayload;
   try {
     body = (await request.json()) as VizuLeadPayload;
@@ -99,6 +114,7 @@ export async function POST(request: Request) {
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     request.headers.get("x-real-ip") ||
     "";
+  const vstupenka = vydajVstupenku();
 
   const lead = {
     datum: bratislavaTimestamp(),
@@ -133,7 +149,7 @@ export async function POST(request: Request) {
   const makeUrl = process.env.MAKE_WEBHOOK_URL;
   if (!makeUrl) {
     console.error("[vizu-lead] MAKE_WEBHOOK_URL nie je nastavená — lead sa nezapísal:", lead);
-    return NextResponse.json({ error: "Odoslanie zlyhalo." }, { status: 502 });
+    return NextResponse.json({ error: "Odoslanie zlyhalo.", vstupenka }, { status: 502 });
   }
 
   try {
@@ -151,12 +167,12 @@ export async function POST(request: Request) {
     if (!response.ok) {
       const detail = await response.text();
       console.error("[vizu-lead] Make odmietol požiadavku:", response.status, detail, lead);
-      return NextResponse.json({ error: "Odoslanie zlyhalo." }, { status: 502 });
+      return NextResponse.json({ error: "Odoslanie zlyhalo.", vstupenka }, { status: 502 });
     }
   } catch (error) {
     console.error("[vizu-lead] Volanie na Make zlyhalo:", error, lead);
-    return NextResponse.json({ error: "Odoslanie zlyhalo." }, { status: 502 });
+    return NextResponse.json({ error: "Odoslanie zlyhalo.", vstupenka }, { status: 502 });
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, vstupenka });
 }
